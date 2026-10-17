@@ -1,6 +1,7 @@
 name: Refresh data
 
-# Once a day, re-scrape the upstream archive. When anything changed, run the
+# Once a day, re-scrape the upstream banlist archive and Konami's Genesys
+# point list. When anything changed, run the
 # full test suite and link check against the new data, then open (or update)
 # a pull request on bot/data-refresh with a summary of what moved. Merging it
 # is the human step, and the push to main that follows is what deploys.
@@ -36,10 +37,24 @@ jobs:
         with:
           node-version: lts/*
 
+      # The open refresh PR's point lists, so a pending Genesys change keeps
+      # the date it was first seen on rather than moving every day.
+      - name: Read the open refresh branch
+        run: |
+          if git fetch --quiet --depth 1 origin "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH" 2>/dev/null; then
+            git show "origin/$BRANCH:data/genesys.json" > "$RUNNER_TEMP/seen-genesys.json" 2>/dev/null || echo '{}' > "$RUNNER_TEMP/seen-genesys.json"
+          else
+            echo '{}' > "$RUNNER_TEMP/seen-genesys.json"
+          fi
+
+      # Sequential on purpose: timed locally at 2s and 1s, so running them in
+      # parallel would save about a second. Not worth the coordination.
       # --allow-shrink lets a list that vanished upstream through, flagged in
       # the summary for review. A whole format going missing is still refused.
       - name: Fetch banlists
         run: node tools/fetch-banlists.mjs --allow-shrink --summary "$RUNNER_TEMP/summary-1-banlists.md"
+      - name: Fetch Genesys points
+        run: node tools/fetch-genesys.mjs --seen "$RUNNER_TEMP/seen-genesys.json" --summary "$RUNNER_TEMP/summary-2-genesys.md"
 
       - name: Compare with main and the open refresh branch
         id: diff
@@ -51,8 +66,8 @@ jobs:
             exit 0
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          if git fetch --quiet origin "$BRANCH" 2>/dev/null; then
-            echo "stale=$(node tools/data-differs.mjs FETCH_HEAD)" >> "$GITHUB_OUTPUT"
+          if git rev-parse --quiet --verify "refs/remotes/origin/$BRANCH" >/dev/null; then
+            echo "stale=$(node tools/data-differs.mjs "origin/$BRANCH")" >> "$GITHUB_OUTPUT"
           else
             echo "stale=true" >> "$GITHUB_OUTPUT"
           fi
@@ -73,7 +88,7 @@ jobs:
         run: |
           body="$RUNNER_TEMP/body.md"
           {
-            echo "Scheduled scrape of the upstream archives found changes."
+            echo "Scheduled scrape of the upstream banlist archive and Genesys point list found changes."
             echo
             cat "$RUNNER_TEMP"/summary-*.md
             echo

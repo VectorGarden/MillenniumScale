@@ -37,9 +37,27 @@ Each format publishes a combined `*CombiList.conf` holding every list it has eve
 
 **Quirks the fetcher handles.** Section names are day-first European dates (`TCG 18.05.2026` → `2026-05-18`), and older OCG lists give only a month (`OCG 08.2000` → `2000-08-01`, or the exact advertised day when the index page has one). Occasionally the archive carries two sections for one date where the later is a correction — the more complete one wins, and it says so. Three sections upstream currently have no card entries at all (`MD 31.01.2026`, `MD 21.01.2026`, `OCG 21.12.2025`); those are skipped and reported rather than imported as empty lists that would call every deck legal.
 
+### Genesys points
+
+`data/genesys.js` holds the [Genesys](https://www.yugioh-card.com/en/genesys/) point list: 750 pointed cards as of the 1st Anniversary Update (announced October 5th 2026). Every card not on it costs 0.
+
+```bash
+node tools/fetch-genesys.mjs                    # fetch; writes only if any value changed
+node tools/fetch-genesys.mjs --date 2026-10-05  # date a new list by its announced effective date
+```
+
+Konami's page is the authority, but it lists names, not passcodes, and carries no effective date. So:
+
+- **Names are resolved against YGOPRODeck**, comparing letters and digits only (`Ω7` and `O7` match). The two spellings that differ outright live in `ALIASES` in `tools/lib/genesys.mjs`.
+- **YGOPRODeck's own `genesys_points` is the cross-check.** Where they disagree Konami's value is used, and the refresh PR lists every disagreement. A pointed card YGOPRODeck knows but no Konami row resolved to is kept at YGOPRODeck's value and reported, so a spelling change can't quietly make a 100-point card free.
+- **History accumulates.** Konami only publishes the current list, so each change is added as a new dated list on top. It's dated the day the change was first seen (`dateSource: "detected"`) unless `--date` gives the announced day (`"announced"`). An unmerged refresh PR keeps its first-seen date rather than moving daily.
+- **A broken page isn't a new list.** Fewer than 100 rows, or a near-empty card database, is refused rather than written.
+
+Each list carries the standard 100-point `cap`.
+
 ### Scheduled refresh
 
-`.github/workflows/refresh.yml` re-runs the fetcher every day at 07:23 UTC (and on demand from the Actions tab). When upstream has changed, it runs the full test suite and link check against the new data, then opens a pull request from `bot/data-refresh` whose description says what moved: new lists with how many cards each changed, upstream corrections, and re-dated lists. Merging that PR is the only human step; the push to `main` deploys it.
+`.github/workflows/refresh.yml` re-runs both fetchers every day at 07:23 UTC (and on demand from the Actions tab). When upstream has changed, it runs the full test suite and link check against the new data, then opens a pull request from `bot/data-refresh` whose description says what moved: new lists with how many cards each changed, upstream corrections, and re-dated lists. Merging that PR is the only human step; the push to `main` deploys it.
 
 The fetcher is built to run unattended:
 
@@ -63,6 +81,7 @@ Everything the site knows is published as static JSON beside the pages, so other
 |---|---|
 | `https://scale.reizu.dev/data/index.json` | A few KB. Each format, its list count and range, the current list's id, date and size, and when each bundle last changed. Poll this one. |
 | `https://scale.reizu.dev/data/banlists.json` | The whole banlist archive, schema `millennium-scale/banlists@1`. |
+| `https://scale.reizu.dev/data/genesys.json` | Every Genesys point list, schema `millennium-scale/genesys@1`. Same shape, with `points` in place of `status` and a `cap` per list. |
 
 `index.json` carries no timestamp of its own and is rebuilt from the bundles, so it changes only when the data does. Compare its `current.id` values, or a bundle's `generated`, to tell whether there's anything new to download.
 
@@ -185,7 +204,7 @@ Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Dep
 
 ### Checks that run before publishing
 
-`npm test` — 65 tests across 6 suites covering the parsers, validation engine, list diff, bundled archive, deck import and the refresh logic.
+`npm test` — 73 tests across 7 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic and the Genesys point list.
 
 `npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
 
@@ -260,7 +279,7 @@ site.webmanifest      installable-app metadata
 robots.txt sitemap.xml
 .github/workflows/deploy.yml   test, build, publish
 .github/workflows/refresh.yml  daily scrape -> refresh PR
-tests/                65 tests, run with npm test
+tests/                73 tests, run with npm test
 assets/styles.css     design tokens, both themes, all layout
 assets/icon.svg       app icon
 js/core.js            parsers, card database, validation engine, shared UI
@@ -269,11 +288,14 @@ js/browse.js          archive page
 js/publish.js         publish page
 data/banlists.js      the archive (generated, ~1.8 MB / ~250 KB gzipped)
 data/banlists.json    the same data, pretty-printed, for other tools
+data/genesys.js       Genesys point lists (generated)
+data/genesys.json     the same, pretty-printed
 data/index.json       small manifest of every bundle and format, for polling
 data/idmap.js         optional foreign-id -> passcode table (generated with --idmap)
 data/cards.js         optional offline card details (generated with --cards)
 assets/icons/         PNG set, maskable variants, social card
 tools/fetch-banlists.mjs
+tools/fetch-genesys.mjs
 tools/lib/            change detection, refresh summary, manifest
 tools/data-differs.mjs
 tools/build-site.mjs  assembles _site/ for publishing
@@ -282,4 +304,4 @@ tools/check-links.mjs
 
 ## Credits
 
-Banlist data from [ygo.anihelp.co.uk](https://ygo.anihelp.co.uk/). Card data from [YGOPRODeck](https://ygoprodeck.com/). Yu-Gi-Oh! is a trademark of Konami; this is an unaffiliated fan tool.
+Banlist data from [ygo.anihelp.co.uk](https://ygo.anihelp.co.uk/). Genesys points from [Konami](https://www.yugioh-card.com/en/genesys/), cross-checked against YGOPRODeck. Card data from [YGOPRODeck](https://ygoprodeck.com/). Yu-Gi-Oh! is a trademark of Konami; this is an unaffiliated fan tool.

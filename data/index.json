@@ -7,6 +7,13 @@
       "schema": "millennium-scale/banlists@1",
       "generated": "2026-08-22T01:05:19.069Z",
       "source": "https://ygo.anihelp.co.uk"
+    },
+    {
+      "file": "data/genesys.json",
+      "kind": "points",
+      "schema": "millennium-scale/genesys@1",
+      "generated": "2026-10-17T06:27:15.882Z",
+      "source": "https://www.yugioh-card.com/en/genesys/"
     }
   ],
   "formats": [
@@ -47,6 +54,19 @@
         "id": "OCG-2026-07-01",
         "date": "2026-07-01",
         "entries": 197
+      }
+    },
+    {
+      "kind": "points",
+      "key": "GEN",
+      "name": "Genesys",
+      "file": "data/genesys.json",
+      "lists": 1,
+      "oldest": "2026-10-05",
+      "current": {
+        "id": "GEN-2026-10-05",
+        "date": "2026-10-05",
+        "entries": 750
       }
     }
   ]
