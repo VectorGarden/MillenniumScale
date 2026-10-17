@@ -9,10 +9,11 @@
     formatKey: MS.prefs.get('formatKey', 'TCG'),
     listId: MS.prefs.get('listId', null),
     mode: MS.prefs.get('mode', 'advanced'),
-    art: MS.prefs.get('art', 'text')
+    art: MS.prefs.get('art', 'text'),
+    cap: MS.prefs.get('genesysCap', null)    // null = the list's own cap
   };
 
-  var fmtSel = $('#fmt'), lstSel = $('#lst');
+  var fmtSel = $('#fmt'), lstSel = $('#lst'), capIn = $('#cap');
   var statusBox = $('#status'), resultBox = $('#result');
 
   /* ---------------- list pickers ---------------- */
@@ -51,7 +52,17 @@
     var rules = MS.rulesFor(state.formatKey);
     $('#mode-field').style.display = rules.hasTraditional ? '' : 'none';
     if (!rules.hasTraditional) state.mode = 'advanced';
+
+    // Genesys events set their own cap; 100 is only the standard.
+    $('#cap-field').style.display = rules.points ? '' : 'none';
+    if (rules.points) capIn.value = String(currentCap());
     syncSegments();
+  }
+
+  function currentCap() {
+    if (state.cap != null) return state.cap;
+    var list = MS.banlists.get(state.formatKey, state.listId);
+    return list && list.cap != null ? list.cap : MS.rulesFor(state.formatKey).pointCap;
   }
 
   function syncSegments() {
@@ -72,9 +83,18 @@
     rerun();
   });
 
+  capIn.addEventListener('change', function () {
+    var v = parseInt(capIn.value, 10);
+    state.cap = isNaN(v) || v < 0 ? null : v;
+    MS.prefs.set('genesysCap', state.cap);
+    capIn.value = String(currentCap());
+    rerun();
+  });
+
   lstSel.addEventListener('change', function () {
     state.listId = lstSel.value;
     MS.prefs.set('listId', state.listId);
+    if (MS.rulesFor(state.formatKey).points) capIn.value = String(currentCap());
     rerun();
   });
 
@@ -278,7 +298,8 @@
     if (!list) {
       return fail('No banlist is loaded for this format yet. Run the fetch script, or add one on the Publish page.');
     }
-    var result = MS.validate(state.deck, list, { formatKey: state.formatKey, mode: state.mode });
+    var rules = MS.rulesFor(state.formatKey);
+    var result = MS.validate(state.deck, list, { formatKey: state.formatKey, mode: state.mode, cap: rules.points ? currentCap() : null });
     render(result, loadResult);
   }
 
@@ -340,8 +361,8 @@
       el('p', {
         class: 'sub',
         text: deckName + ' \u00b7 ' + result.rules.name + ' ' +
-              (result.mode === 'traditional' ? 'Traditional' : 'Advanced') + ' \u00b7 list effective ' +
-              MS.formatDate(result.list.date)
+              (result.points ? result.points.cap + '-point cap' : (result.mode === 'traditional' ? 'Traditional' : 'Advanced')) +
+              ' \u00b7 list effective ' + MS.formatDate(result.list.date)
       })
     ]));
 
@@ -357,7 +378,8 @@
     if (result.rules.hasSide || result.sizes.side) {
       tallyCell(result.sizes.side, 'Side', result.sizes.side > result.rules.sideMax);
     }
-    tallyCell(result.byStatus[0], 'Forbidden', result.byStatus[0] > 0 && result.mode !== 'traditional');
+    if (result.points) tallyCell(result.points.total + '/' + result.points.cap, 'Points', result.points.over > 0);
+    else tallyCell(result.byStatus[0], 'Forbidden', result.byStatus[0] > 0 && result.mode !== 'traditional');
     v.appendChild(tally);
 
     if (problems.length) {

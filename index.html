@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Millennium Scale — weigh your deck against the list</title>
-<meta name="description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list.">
+<meta name="description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list, or the Genesys point cap.">
 <rect width="64" height="64" rx="12" fill="%2312121A"/><g fill="none" stroke="%23D8AE33" stroke-width="3.4" stroke-linecap="round"><path d="M32 24v22"/><path d="M22 48h20"/><path d="M13 24h38"/><path d="M13 24l-5 8M13 24l5 8M51 24l-5 8M51 24l5 8"/></g><path d="M7 32h12a6 6 0 0 1-12 0Z" fill="%23D8AE33"/><path d="M45 32h12a6 6 0 0 1-12 0Z" fill="%23D8AE33"/><path d="M32 12c6 0 10 4.5 10 6.2S38 24.5 32 24.5 22 20 22 18.2 26 12 32 12Z" fill="%23E8C45A"/><circle cx="32" cy="18.2" r="3" fill="%2312121A"/></svg>">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
@@ -16,12 +16,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Millennium Scale">
 <meta property="og:title" content="Millennium Scale — Yu-Gi-Oh! banlist validator">
-<meta property="og:description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list.">
+<meta property="og:description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list, or the Genesys point cap.">
 <meta property="og:url" content="https://scale.reizu.dev/">
 <meta property="og:image" content="https://scale.reizu.dev/assets/icons/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Millennium Scale — Yu-Gi-Oh! banlist validator">
-<meta name="twitter:description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list.">
+<meta name="twitter:description" content="Drop in a .ydk, ydke:// URI or deck JSON and see exactly which cards break the TCG, OCG or Master Duel Forbidden &amp; Limited list, or the Genesys point cap.">
 <meta name="twitter:image" content="https://scale.reizu.dev/assets/icons/og-card.png">
 <link rel="stylesheet" href="assets/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
     <div class="page-head">
       <p class="eyebrow">Forbidden &amp; Limited check</p>
       <h1>Weigh your deck against the list.</h1>
-      <p class="lede">Drop in a <code>.ydk</code>, paste a <code>ydke://</code> URI, or hand it deck JSON. Every card that breaks the list turns red, with the exact reason and how many copies to cut.</p>
+      <p class="lede">Drop in a <code>.ydk</code>, paste a <code>ydke://</code> URI, or hand it deck JSON. Every card that breaks the list turns red, with the exact reason and how many copies to cut. Genesys decks are weighed against the point cap instead.</p>
     </div>
 
     <div class="panel toolbar" role="group" aria-label="List selection">
@@ -80,6 +80,10 @@
           <button type="button" data-mode="advanced" aria-pressed="true">Advanced</button>
           <button type="button" data-mode="traditional" aria-pressed="false">Traditional</button>
         </div>
+      </div>
+      <div class="field" id="cap-field" style="display:none; flex:0 0 120px">
+        <label for="cap">Point cap</label>
+        <input type="number" id="cap" min="0" step="5" inputmode="numeric">
       </div>
       <div class="spacer"></div>
       <div class="field" style="flex:0 0 auto">
@@ -132,6 +136,7 @@
 </footer>
 
 <script src="data/banlists.js"></script>
+<script src="data/genesys.js"></script>
 <script src="data/idmap.js"></script>
 <script src="js/core.js"></script>
 <script src="js/validator.js"></script>

@@ -282,7 +282,8 @@
   });
 
   function bundle() {
-    var formats = MS.banlists.all().map(function (f) {
+    // Genesys point lists ship in their own bundle, data/genesys.js.
+    var formats = MS.banlists.all().filter(function (f) { return !MS.rulesFor(f.key).points; }).map(function (f) {
       return {
         key: f.key,
         name: f.name,

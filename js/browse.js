@@ -16,6 +16,20 @@
 
   var fmtSel = $('#fmt'), cmpSel = $('#compare'), rail = $('#rail'), body = $('#list-body');
 
+  /** Genesys lists hold point costs rather than statuses. */
+  function pointsMode() { return !!MS.rulesFor(state.formatKey).points; }
+
+  // Point lists group by cost band rather than by status.
+  var BANDS = [[100, Infinity, '100 points'], [50, 99, '50\u201399 points'], [20, 49, '20\u201349 points'], [10, 19, '10\u201319 points'], [1, 9, '1\u20139 points'], [0, 0, 'Back to 0 points']];
+
+  var KIND_LABEL = {
+    added: 'Newly listed', tightened: 'Tightened', loosened: 'Loosened', removed: 'Off the list', unchanged: 'Unchanged'
+  };
+  var KIND_LABEL_POINTS = {
+    added: 'Newly pointed', tightened: 'Raised', loosened: 'Lowered', removed: 'Back to 0', unchanged: 'Unchanged'
+  };
+  function kindLabel(k) { return (pointsMode() ? KIND_LABEL_POINTS : KIND_LABEL)[k]; }
+
   /* ---------------- setup ---------------- */
 
   function init() {
@@ -37,6 +51,7 @@
     fmtSel.value = state.formatKey;
 
     $('#hover-art').checked = MS.artHover.enabled();
+    syncFilter();
     buildRail();
     buildCompare();
     show();
@@ -47,8 +62,16 @@
     MS.prefs.set('formatKey', state.formatKey);
     state.listId = null;
     state.compareId = 'prev';
+    syncFilter();
     buildRail(); buildCompare(); show();
   });
+
+  // The status filter means nothing on a point list.
+  function syncFilter() {
+    var sel = $('#status-filter');
+    sel.parentNode.style.display = pointsMode() ? 'none' : '';
+    if (pointsMode()) { state.filter = 'all'; sel.value = 'all'; }
+  }
 
   cmpSel.addEventListener('change', function () {
     state.compareId = cmpSel.value;
@@ -128,12 +151,19 @@
     var other = compareList();
 
     $('#list-title').textContent = MS.formatDate(list.date);
-    var counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
-    list.cards.forEach(function (c) { counts[c.status]++; });
-    $('#list-lede').textContent =
-      MS.rulesFor(state.formatKey).name + ' Forbidden & Limited list \u00b7 ' +
-      counts[0] + ' Forbidden, ' + counts[1] + ' Limited, ' + counts[2] + ' Semi-Limited' +
-      (MS.banlists.isLocal(list.id) ? ' \u00b7 stored locally in this browser' : '');
+    if (pointsMode()) {
+      $('#list-lede').textContent =
+        'Genesys point list \u00b7 ' + list.cards.length + ' cards cost points, every other card is 0 \u00b7 standard cap ' +
+        (list.cap != null ? list.cap : MS.rulesFor(state.formatKey).pointCap) +
+        (list.dateSource === 'detected' ? ' \u00b7 dated when the change was first seen' : '');
+    } else {
+      var counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
+      list.cards.forEach(function (c) { counts[c.status]++; });
+      $('#list-lede').textContent =
+        MS.rulesFor(state.formatKey).name + ' Forbidden & Limited list \u00b7 ' +
+        counts[0] + ' Forbidden, ' + counts[1] + ' Limited, ' + counts[2] + ' Semi-Limited' +
+        (MS.banlists.isLocal(list.id) ? ' \u00b7 stored locally in this browser' : '');
+    }
 
     body.innerHTML = '';
     body.appendChild(el('p', { class: 'eyebrow', text: 'Loading card details\u2026' }));
@@ -157,11 +187,11 @@
       }));
       var sum = el('div', { class: 'diff-summary', role: 'group', 'aria-label': 'Filter by what changed' });
       [
-        ['added', diff.added.length, 'Newly listed'],
-        ['tightened', diff.tightened.length, 'Tightened'],
-        ['loosened', diff.loosened.length, 'Loosened'],
-        ['removed', diff.removed.length, 'Off the list'],
-        ['unchanged', diff.unchanged, 'Unchanged']
+        ['added', diff.added.length],
+        ['tightened', diff.tightened.length],
+        ['loosened', diff.loosened.length],
+        ['removed', diff.removed.length],
+        ['unchanged', diff.unchanged]
       ].forEach(function (row) {
         var kind = row[0], n = row[1];
         var on = !!state.kinds[kind];
@@ -172,7 +202,7 @@
           title: n === 0 ? 'Nothing in this category' : (on ? 'Click to stop showing only these' : 'Click to show only these')
         }, [
           el('span', { class: 'n', text: String(n) }),
-          el('span', { class: 'k', text: row[2] })
+          el('span', { class: 'k', text: kindLabel(kind) })
         ]);
         chip.addEventListener('click', function () {
           if (state.kinds[kind]) delete state.kinds[kind];
@@ -214,7 +244,7 @@
     list.cards.forEach(function (c) {
       var card = MS.cards.get(c.id);
       byId[c.id] = {
-        id: c.id, status: c.status, card: card,
+        id: c.id, status: c.status, points: c.points, card: card,
         name: card ? card.name : (c.name || MS.passcode(c.id)),
         change: null
       };
@@ -223,18 +253,16 @@
       diff.all.forEach(function (e) {
         if (byId[e.id]) { byId[e.id].change = e; return; }
         // Fell off the list entirely — still worth showing in a comparison.
-        byId[e.id] = { id: e.id, status: e.now, card: e.card, name: e.name, change: e };
+        byId[e.id] = e.points
+          ? { id: e.id, points: e.now, card: e.card, name: e.name, change: e }
+          : { id: e.id, status: e.now, card: e.card, name: e.name, change: e };
       });
     }
     return Object.keys(byId).map(function (k) { return byId[k]; });
   }
 
   function kindOf(r) {
-    if (!r.change) return 'unchanged';
-    var e = r.change;
-    if (e.was === 3) return 'added';
-    if (e.now === 3) return 'removed';
-    return e.now < e.was ? 'tightened' : 'loosened';
+    return r.change ? r.change.kind : 'unchanged';
   }
 
   function matches(r) {
@@ -252,29 +280,31 @@
   function table(rows, diff) {
     var showChange = !!diff;
     var t = el('table', { class: 'list-table' });
-    var cols = ['Card', 'Type', 'Attribute', 'Lv / Rk / Link', 'ATK / DEF', 'Status'];
+    var cols = ['Card', 'Type', 'Attribute', 'Lv / Rk / Link', 'ATK / DEF', pointsMode() ? 'Points' : 'Status'];
     if (showChange) cols.push('Change');
     cols.push('Released', 'Passcode');
 
     t.appendChild(el('thead', {}, [
       el('tr', {}, cols.map(function (c, i) {
-        var right = (i === 3 || i === 4 || i >= cols.length - 2);
+        var right = (i === 3 || i === 4 || i >= cols.length - 2 || (i === 5 && pointsMode()));
         return el('th', { text: c, style: right ? 'text-align:right' : '' });
       }))
     ]));
 
     var groups;
     if (diff && Object.keys(state.kinds).length) {
-      groups = [
-        { kind: 'added', label: 'Newly listed' },
-        { kind: 'tightened', label: 'Tightened' },
-        { kind: 'loosened', label: 'Loosened' },
-        { kind: 'removed', label: 'Off the list' },
-        { kind: 'unchanged', label: 'Unchanged' }
-      ].filter(function (g) { return state.kinds[g.kind]; })
-       .map(function (g) {
-         return { label: g.label, rows: rows.filter(function (r) { return kindOf(r) === g.kind; }) };
-       }).filter(function (g) { return g.rows.length; });
+      groups = ['added', 'tightened', 'loosened', 'removed', 'unchanged']
+        .filter(function (k) { return state.kinds[k]; })
+        .map(function (k) {
+          return { label: kindLabel(k), rows: rows.filter(function (r) { return kindOf(r) === k; }) };
+        }).filter(function (g) { return g.rows.length; });
+    } else if (pointsMode()) {
+      groups = BANDS.map(function (b) {
+        return {
+          label: b[2],
+          rows: rows.filter(function (r) { return r.points >= b[0] && r.points <= b[1]; })
+        };
+      }).filter(function (g) { return g.rows.length; });
     } else {
       groups = [0, 1, 2, 3].map(function (st) {
         return {
@@ -289,7 +319,7 @@
       tb.appendChild(el('tr', { class: 'group-head' }, [
         el('td', { colspan: String(cols.length), text: g.label + '  (' + g.rows.length + ')' })
       ]));
-      g.rows.sort(function (a, b) { return a.name.localeCompare(b.name); })
+      g.rows.sort(function (a, b) { return (pointsMode() ? b.points - a.points : 0) || a.name.localeCompare(b.name); })
             .forEach(function (r) { tb.appendChild(rowFor(r, showChange)); });
     });
     t.appendChild(tb);
@@ -315,7 +345,7 @@
       el('span', { text: r.name })
     ]);
     nameCell.addEventListener('click', function () {
-      MS.showCard({ card: c, name: r.name, id: r.id, displayId: r.id, status: r.status, total: 0 });
+      MS.showCard({ card: c, name: r.name, id: r.id, displayId: r.id, status: r.status, points: r.points, total: 0 });
     });
     nameCell.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nameCell.click(); }
@@ -328,7 +358,9 @@
       el('td', { text: c ? (c.attribute || c.race || '') : '' }),
       el('td', { class: 'num', text: lvl }),
       el('td', { class: 'num', text: atkdef }),
-      el('td', {}, [el('span', { class: 'pill', 'data-status': String(r.status), text: MS.STATUS_LABEL[r.status] })])
+      r.points != null
+        ? el('td', { class: 'num', text: String(r.points) })
+        : el('td', {}, [el('span', { class: 'pill', 'data-status': String(r.status), text: MS.STATUS_LABEL[r.status] })])
     ];
 
     if (showChange) {
@@ -345,9 +377,9 @@
       class: 'arrow', 'data-dir': e.direction,
       title: MS.changeLabel(e)
     }, [
-      el('span', { class: 'was' + (e.wasUnreleased ? ' unrel' : ''), text: MS.statusShort(e.was, e.wasUnreleased) }),
+      el('span', { class: 'was' + (e.wasUnreleased ? ' unrel' : ''), text: e.points ? String(e.was) : MS.statusShort(e.was, e.wasUnreleased) }),
       el('span', { class: 'sep', text: '\u2192' }),
-      el('span', { class: 'now' + (e.nowUnreleased ? ' unrel' : ''), text: MS.statusShort(e.now, e.nowUnreleased) })
+      el('span', { class: 'now' + (e.nowUnreleased ? ' unrel' : ''), text: e.points ? String(e.now) : MS.statusShort(e.now, e.nowUnreleased) })
     ]);
   }
 
@@ -379,7 +411,8 @@
         return {
           id: c.id, passcode: MS.passcode(c.id),
           name: card ? card.name : c.name,
-          status: c.status, statusLabel: MS.STATUS_LABEL[c.status],
+          status: c.status, statusLabel: c.points != null ? undefined : MS.STATUS_LABEL[c.status],
+          points: c.points,
           frame: card ? card.frame : null, type: card ? card.type : null,
           race: card ? card.race : null, attribute: card ? card.attribute : null,
           level: card ? card.level : null, linkval: card ? card.linkval : null,
@@ -392,6 +425,7 @@
 
   $('#dl-conf').addEventListener('click', function () {
     var list = currentList(); if (!list) return;
+    if (MS.isPointsList(list)) return MS.toast('A point list has no .conf form \u2014 download the JSON instead');
     MS.download(state.formatKey + '-' + list.date + '.conf', MS.serializeLFList(list), 'text/plain');
   });
 
@@ -402,7 +436,8 @@
     if (!diff.all.length) return MS.toast('Nothing changed between these two lists');
     var rows = [['Card', 'Passcode', 'Was', 'Now', 'Change']].concat(diff.all.map(function (e) {
       return [e.name, MS.passcode(e.id),
-              MS.statusLong(e.was, e.wasUnreleased), MS.statusLong(e.now, e.nowUnreleased),
+              e.points ? e.was : MS.statusLong(e.was, e.wasUnreleased),
+              e.points ? e.now : MS.statusLong(e.now, e.nowUnreleased),
               MS.changeLabel(e)];
     }));
     var csv = rows.map(function (r) {

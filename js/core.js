@@ -27,11 +27,22 @@
   MS.FORMAT_RULES = {
     TCG: { name: 'TCG',          hasSide: true,  hasTraditional: true,  mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3 },
     OCG: { name: 'OCG',          hasSide: true,  hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3 },
-    MD:  { name: 'Master Duel',  hasSide: false, hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 0,  maxCopies: 3 }
+    MD:  { name: 'Master Duel',  hasSide: false, hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 0,  maxCopies: 3 },
+    // Genesys ignores the F&L list: every card is at 3, some cost points,
+    // and the whole deck (Side included) must fit under the event's cap.
+    GEN: { name: 'Genesys',      hasSide: true,  hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3, points: true, pointCap: 100 }
   };
 
   MS.rulesFor = function (formatKey) {
     return MS.FORMAT_RULES[formatKey] || MS.FORMAT_RULES.TCG;
+  };
+
+  /** Why a card can't be played in Genesys at all, or null. */
+  MS.genesysBlocked = function (card) {
+    if (!card || !card.frame) return null;
+    if (card.frame === 'link') return 'Link Monsters aren\u2019t allowed in Genesys';
+    if (card.frame.indexOf('pendulum') !== -1) return 'Pendulum Monsters aren\u2019t allowed in Genesys';
+    return null;
   };
 
   var EXTRA_FRAMES = {
@@ -766,7 +777,8 @@
 
   MS.banlists = {
     all: function () {
-      var bundled = (global.MS_BANLISTS && global.MS_BANLISTS.formats) || [];
+      var bundled = ((global.MS_BANLISTS && global.MS_BANLISTS.formats) || [])
+        .concat((global.MS_GENESYS && global.MS_GENESYS.formats) || []);
       var local = MS.prefs.get('customLists', []);
       var byKey = Object.create(null);
       var order = [];
@@ -817,6 +829,18 @@
       return MS.prefs.get('customLists', []).some(function (l) { return l.id === id; });
     },
 
+    /** id -> points, alt-art passcodes folded in where known. */
+    pointsMap: function (list) {
+      var map = Object.create(null);
+      if (!list) return map;
+      list.cards.forEach(function (c) {
+        map[c.id] = c.points || 0;
+        var known = MS.cards.get(c.id);
+        if (known) (known.alts || []).concat([known.id]).forEach(function (a) { map[a] = c.points || 0; });
+      });
+      return map;
+    },
+
     /** id -> status, alt-art passcodes folded in where known. */
     statusMap: function (list) {
       var map = Object.create(null);
@@ -852,7 +876,48 @@
     return rel <= listDate;
   }
 
+  /** A Genesys point list rather than a Forbidden & Limited one. */
+  MS.isPointsList = function (list) {
+    return !!(list && list.cards.length && list.cards[0].points !== undefined);
+  };
+
+  function kindOfChange(was, now, rest) {
+    if (was === rest) return 'added';
+    if (now === rest) return 'removed';
+    return now < was ? 'tightened' : 'loosened';
+  }
+
+  /**
+   * Point lists diff the same way, with 0 as the resting value: a card that
+   * gains points is "added", one that drops to 0 is "removed", and a rising
+   * cost is a tightening.
+   */
+  function diffPoints(from, to) {
+    var a = Object.create(null), b = Object.create(null), ids = Object.create(null), names = Object.create(null);
+    (from ? from.cards : []).forEach(function (c) { a[c.id] = c.points || 0; ids[c.id] = 1; names[c.id] = c.name; });
+    (to ? to.cards : []).forEach(function (c) { b[c.id] = c.points || 0; ids[c.id] = 1; names[c.id] = c.name || names[c.id]; });
+
+    var out = { from: from, to: to, points: true, added: [], removed: [], tightened: [], loosened: [], unchanged: 0, all: [] };
+    Object.keys(ids).forEach(function (id) {
+      var was = a[id] || 0, now = b[id] || 0;
+      if (was === now) { out.unchanged++; return; }
+      var card = MS.cards.get(id);
+      var kind = was === 0 ? 'added' : now === 0 ? 'removed' : (now > was ? 'tightened' : 'loosened');
+      var entry = {
+        id: Number(id), name: card ? card.name : (names[id] || MS.passcode(id)),
+        card: card, was: was, now: now, points: true, kind: kind,
+        wasUnreleased: false, nowUnreleased: false,
+        direction: now > was ? 'tighter' : 'looser'
+      };
+      out.all.push(entry);
+      out[kind].push(entry);
+    });
+    out.all.sort(function (x, y) { return x.name.localeCompare(y.name); });
+    return out;
+  }
+
   MS.diffLists = function (from, to, opts) {
+    if (MS.isPointsList(from) && MS.isPointsList(to)) return diffPoints(from, to);
     opts = opts || {};
     var fmt = opts.formatKey;
     var a = Object.create(null), b = Object.create(null), ids = Object.create(null);
@@ -873,7 +938,8 @@
         // printed yet, which is a different thing entirely.
         wasUnreleased: was === 3 && !existedOn(card, from && from.date, fmt),
         nowUnreleased: now === 3 && !existedOn(card, to && to.date, fmt),
-        direction: now === was ? 'same' : (now < was ? 'tighter' : 'looser')
+        direction: now === was ? 'same' : (now < was ? 'tighter' : 'looser'),
+        kind: kindOfChange(was, now, 3)
       };
       if (was === now) { out.unchanged++; return; }
       out.all.push(entry);
@@ -898,6 +964,11 @@
   };
 
   MS.changeLabel = function (e) {
+    if (e.points) {
+      if (e.was === 0) return 'Newly ' + e.now + ' points';
+      if (e.now === 0) return 'Back to 0 (was ' + e.was + ')';
+      return e.was + ' \u2192 ' + e.now + ' points';
+    }
     if (e.wasUnreleased) return 'New card, ' + MS.STATUS_LABEL[e.now] + ' on release';
     if (e.was === 3) return 'Newly ' + MS.STATUS_LABEL[e.now];
     if (e.now === 3) return 'Off the list (was ' + MS.STATUS_LABEL[e.was] + ')';
@@ -976,8 +1047,11 @@
     opts = opts || {};
     var rules = MS.rulesFor(opts.formatKey);
     var mode = rules.hasTraditional && opts.mode === 'traditional' ? 'traditional' : 'advanced';
-    var statuses = MS.banlists.statusMap(list);
-    var whitelist = !!(list && list.whitelist);
+    var pointsMode = !!rules.points;
+    // A point list has no statuses: every card sits at 3 and costs points instead.
+    var statuses = pointsMode ? Object.create(null) : MS.banlists.statusMap(list);
+    var pointsOf = pointsMode ? MS.banlists.pointsMap(list) : null;
+    var whitelist = !pointsMode && !!(list && list.whitelist);
 
     var sections = ['main', 'extra', 'side'];
     var entries = Object.create(null);  // baseKey -> {key, name, ids, counts, card}
@@ -997,6 +1071,11 @@
             status: 3
           };
           if (!card) unknown.push(id);
+          if (pointsMode) {
+            var pts = pointsOf[id];
+            if (pts === undefined && card) pts = pointsOf[card.id];
+            entries[key].points = pts || 0;
+          }
         }
         var e = entries[key];
         e.total++;
@@ -1021,10 +1100,24 @@
           text: e.name,
           why: e.allowed === 0
             ? 'Forbidden — remove all ' + e.total + '.'
-            : MS.STATUS_LABEL[e.status] + ' — ' + e.total + ' in deck, ' + e.allowed + ' allowed. Remove ' + e.over + '.'
+            : (pointsMode ? 'Three copies at most' : MS.STATUS_LABEL[e.status]) + ' — ' + e.total + ' in deck, ' + e.allowed + ' allowed. Remove ' + e.over + '.'
         });
       }
+      if (pointsMode) {
+        e.blocked = MS.genesysBlocked(e.card);
+        if (e.blocked) {
+          e.illegal = true;
+          problems.push({ kind: 'blocked', card: e, text: e.name, why: e.blocked + ' — remove all ' + e.total + '.' });
+        }
+      }
     });
+
+    // Genesys: every copy in Main, Extra and Side counts toward the cap.
+    var pointTotal = 0, pointCap = null;
+    if (pointsMode) {
+      list2.forEach(function (e) { pointTotal += e.points * e.total; });
+      pointCap = opts.cap != null ? opts.cap : (list && list.cap != null ? list.cap : rules.pointCap);
+    }
 
     // Deck construction
     var sizes = { main: (deck.main || []).length, extra: (deck.extra || []).length, side: (deck.side || []).length };
@@ -1038,6 +1131,13 @@
         why: rules.sideMax === 0
           ? rules.name + ' has no Side Deck. Move these ' + sizes.side + ' cards or drop them.'
           : sizes.side + ' cards — the maximum is ' + rules.sideMax + '.'
+      });
+    }
+
+    if (pointsMode && pointTotal > pointCap) {
+      sizeProblems.push({
+        kind: 'points', text: 'Point total',
+        why: pointTotal + ' points \u2014 the cap is ' + pointCap + '. Cut ' + (pointTotal - pointCap) + '.'
       });
     }
 
@@ -1072,6 +1172,7 @@
       unknown: unknown,
       sizes: sizes,
       byStatus: byStatus,
+      points: pointsMode ? { total: pointTotal, cap: pointCap, over: Math.max(0, pointTotal - pointCap) } : null,
       legal: problems.length === 0 && sizeProblems.length === 0,
       statusOf: function (id) {
         var c = MS.cards.get(id);
@@ -1155,7 +1256,11 @@
     if (shown > 1 || opts.alwaysShowQty) {
       tile.appendChild(MS.el('span', { class: 'qty', text: '\u00d7' + shown }));
     }
-    if (entry.status !== 3) {
+    if (entry.blocked) {
+      tile.appendChild(MS.el('span', { class: 'verdict-chip blocked', text: 'Not allowed' }));
+    } else if (entry.points) {
+      tile.appendChild(MS.el('span', { class: 'verdict-chip pts', text: entry.points + ' pts' }));
+    } else if (entry.status !== 3) {
       tile.appendChild(MS.el('span', {
         class: 'verdict-chip',
         text: entry.status === 0 ? 'Forbidden' : entry.status === 1 ? 'Limited 1' : 'Semi 2'
@@ -1214,7 +1319,9 @@
 
     var detail = MS.el('div', { class: 'sheet-detail' }, [
       MS.el('div', {}, [
-        MS.el('span', { class: 'pill', 'data-status': String(entry.status), text: MS.STATUS_LABEL[entry.status] })
+        entry.points != null
+          ? MS.el('span', { class: 'pill', 'data-status': 'points', text: entry.points + ' point' + (entry.points === 1 ? '' : 's') })
+          : MS.el('span', { class: 'pill', 'data-status': String(entry.status), text: MS.STATUS_LABEL[entry.status] })
       ]),
       kv
     ]);

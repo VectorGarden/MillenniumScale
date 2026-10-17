@@ -208,7 +208,7 @@ h2 {
   font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-3);
 }
-select, input[type="text"], input[type="search"], textarea {
+select, input[type="text"], input[type="search"], input[type="number"], textarea {
   background: var(--surface-2);
   border: 1px solid var(--rule-hard);
   border-radius: var(--r);
@@ -412,6 +412,8 @@ html[data-theme="dark"] .tile .pips { color: var(--gold-bright); }
 .tile[data-status="0"] .verdict-chip { background: var(--forbidden); }
 .tile[data-status="1"] .verdict-chip { background: var(--limited); color: #1B1A17; }
 .tile[data-status="2"] .verdict-chip { background: var(--semi); color: #1B1A17; }
+.tile .verdict-chip.pts { background: var(--gold); color: #1B1A17; }
+.tile .verdict-chip.blocked { background: var(--forbidden); color: #fff; }
 
 /* art mode */
 .deck-grid.show-art .tile { min-height: 0; padding: 0; border-left-width: 4px; }
@@ -459,6 +461,8 @@ dialog.sheet::backdrop { background: rgba(8,8,12,.62); backdrop-filter: blur(3px
 .pill[data-status="1"] { color: var(--limited); }
 .pill[data-status="2"] { color: var(--semi); }
 .pill[data-status="3"] { color: var(--legal); }
+.pill[data-status="points"] { color: var(--gold-deep); }
+:root[data-theme="dark"] .pill[data-status="points"] { color: var(--gold-bright); }
 
 /* ============================ list browser ============================ */
 
