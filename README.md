@@ -39,7 +39,7 @@ Each format publishes a combined `*CombiList.conf` holding every list it has eve
 
 ### Genesys points
 
-`data/genesys.js` holds the [Genesys](https://www.yugioh-card.com/en/genesys/) point list: 750 pointed cards as of the 1st Anniversary Update (announced October 5th 2026). Every card not on it costs 0.
+`data/genesys.js` holds every [Genesys](https://www.yugioh-card.com/en/genesys/) point list since launch: 13 lists from September 22nd 2025 to Beyond the Brave's release on October 8th 2026. Every card not on a list costs 0 under it.
 
 ```bash
 node tools/fetch-genesys.mjs                    # fetch; writes only if any value changed
@@ -50,8 +50,17 @@ Konami's page is the authority, but it lists names, not passcodes, and carries n
 
 - **Names are resolved against YGOPRODeck**, comparing letters and digits only (`Ω7` and `O7` match). The two spellings that differ outright live in `ALIASES` in `tools/lib/genesys.mjs`.
 - **YGOPRODeck's own `genesys_points` is the cross-check.** Where they disagree Konami's value is used, and the refresh PR lists every disagreement. A pointed card YGOPRODeck knows but no Konami row resolved to is kept at YGOPRODeck's value and reported, so a spelling change can't quietly make a 100-point card free.
-- **History accumulates.** Konami only publishes the current list, so each change is added as a new dated list on top. It's dated the day the change was first seen (`dateSource: "detected"`) unless `--date` gives the announced day (`"announced"`). An unmerged refresh PR keeps its first-seen date rather than moving daily.
+- **History accumulates.** Konami only publishes the current list, so each change from here on is added as a new dated list on top. It's dated the day the change was first seen (`dateSource: "detected"`) unless `--date` gives the announced day (`"announced"`). An unmerged refresh PR keeps its first-seen date rather than moving daily.
 - **A broken page isn't a new list.** Fewer than 100 rows, or a near-empty card database, is refused rather than written.
+
+**The history before October 2026** was rebuilt once by `tools/backfill-genesys.mjs` from the Internet Archive's captures of Konami's page. Each version is matched to the [Konami blog post](https://yugiohblog.konami.com/category/genesys/) that produced it, and each list records its `note`, `announcement` URL and `source` capture:
+
+- **Points updates** are dated by their post, or by the effective date the post states (the August 2026 update was posted July 30th and took effect Monday August 3rd).
+- **A new set's initial points** are dated by the set's TCG release (`dateSource: "release"`). Konami posts them ahead of the Premiere but adds the cards to the list at release; the capture taken a day after Beyond the Brave's release still lacked them.
+- **Magnificent Monsters** (September 3rd 2026) is the one version the Archive missed, so it's the August list plus the ten new costs from Konami's post, marked `rebuilt`. The next capture agrees with every one of those values.
+- The September 24th 2025 capture caught one cost the post contradicts (Planet Pathfinder at 2, not 3), so that list uses the October 1st capture, which matches the post.
+
+Lists that came and went between two captures and were never announced would be missing. Every captured change matches an announcement, so none are known.
 
 Each list carries the standard 100-point `cap`. Events can set their own, so the validator has a **Point cap** field (remembered per browser; clear it to go back to the list's cap).
 
@@ -224,7 +233,7 @@ Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Dep
 
 ### Checks that run before publishing
 
-`npm test` — 96 tests across 9 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic, and the TCG and OCG Genesys point lists and validation.
+`npm test` — 98 tests across 9 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic, and the TCG and OCG Genesys point lists and validation.
 
 `npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
 
@@ -301,7 +310,7 @@ site.webmanifest      installable-app metadata
 robots.txt sitemap.xml
 .github/workflows/deploy.yml   test, build, publish
 .github/workflows/refresh.yml  daily scrape -> refresh PR
-tests/                96 tests, run with npm test
+tests/                98 tests, run with npm test
 assets/styles.css     design tokens, both themes, all layout
 assets/icon.svg       app icon
 js/core.js            parsers, card database, validation engine, shared UI
@@ -320,6 +329,7 @@ data/cards.js         optional offline card details (generated with --cards)
 assets/icons/         PNG set, maskable variants, social card
 tools/fetch-banlists.mjs
 tools/fetch-genesys.mjs
+tools/backfill-genesys.mjs  one-time rebuild of the Genesys history
 tools/fetch-genesys-ocg.mjs
 tools/lib/            change detection, refresh summary, manifest
 tools/data-differs.mjs

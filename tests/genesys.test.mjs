@@ -70,6 +70,18 @@ export default function run() {
     truthy(/agree on every point value/.test(crossCheckMarkdown({ mismatches: [], unresolved: [], apiOnly: [] })));
   });
 
+  t('older captures drop the semicolon on numeric entities', () => {
+    eq(parseKonamiTable('<table id="tablepress-genesys"><tr><td class="column-1">K9-&#216&#216 Lupis</td><td class="column-2">5</td></tr></table>'),
+      [{ name: 'K9-\u00d8\u00d8 Lupis', points: 5 }]);
+  });
+
+  t('historical lists take no points from YGOPRODeck, and ignore unplaced 0-point rows', () => {
+    const rows = [{ name: '"A Case for K9"', points: 20 }, { name: 'Updated 6/23/2026', points: 0 }];
+    const r = resolvePoints(rows, api, { fillFromApi: false });
+    eq(r.cards, [{ id: 10, name: 'A Case for K9', points: 20 }]);
+    eq([r.unresolved, r.apiOnly, r.mismatches], [[], [], []]);
+  });
+
   const a = [{ id: 1, name: 'x', points: 20 }];
   const b = [{ id: 1, name: 'x', points: 30 }];
 
@@ -113,7 +125,9 @@ export default function run() {
         ids.add(c.id);
       }
     }
-    S.note(`${f.lists.length} list(s), newest ${f.lists[0].date} with ${f.lists[0].cards.length} pointed cards`);
+    eq(f.lists[f.lists.length - 1].date, '2025-09-22', 'history starts at launch: ');
+    for (const l of f.lists) if (!/^https:\/\/yugiohblog\.konami\.com\//.test(l.announcement || '')) throw new Error('no announcement for ' + l.id);
+    S.note(`${f.lists.length} list(s), ${f.lists[f.lists.length - 1].date} to ${f.lists[0].date}, newest with ${f.lists[0].cards.length} pointed cards`);
   });
 
   return S.report();

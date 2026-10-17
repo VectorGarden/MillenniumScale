@@ -12,7 +12,7 @@
       "file": "data/genesys.json",
       "kind": "points",
       "schema": "millennium-scale/genesys@1",
-      "generated": "2026-10-17T06:27:15.882Z",
+      "generated": "2026-10-17T17:26:06.509Z",
       "source": "https://www.yugioh-card.com/en/genesys/"
     },
     {
@@ -68,11 +68,11 @@
       "key": "GEN",
       "name": "Genesys",
       "file": "data/genesys.json",
-      "lists": 1,
-      "oldest": "2026-10-05",
+      "lists": 13,
+      "oldest": "2025-09-22",
       "current": {
-        "id": "GEN-2026-10-05",
-        "date": "2026-10-05",
+        "id": "GEN-2026-10-08",
+        "date": "2026-10-08",
         "entries": 750
       }
     },
