@@ -14,7 +14,8 @@ import { manifestEntry } from './bundle.mjs';
 /** Bundles to describe, in the order they should appear. */
 export const BUNDLES = [
   { file: 'data/banlists.json', kind: 'banlist' },
-  { file: 'data/genesys.json', kind: 'points' }
+  { file: 'data/genesys.json', kind: 'points' },
+  { file: 'data/genesys-ocg.json', kind: 'points' }
 ];
 
 export async function readJSON(path) {
