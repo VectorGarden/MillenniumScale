@@ -6,8 +6,8 @@ Three pages, cross-linked in both directions:
 
 | Page | What it does |
 |---|---|
-| `index.html` | **Validate** — drop a `.ydk`, a `ydke://` URI, or deck JSON |
-| `lists.html` | **Lists** — browse every banlist by format and effective date |
+| `index.html` | **Validate** — drop a `.ydk`, a `ydke://` URI, or deck JSON; checks the F&L list, or the Genesys point cap |
+| `lists.html` | **Lists** — browse every banlist and Genesys point list by format and effective date |
 | `publish.html` | **Publish** — upload a new list, check it, add it to the archive |
 
 No build step, no framework, no bundler. Plain HTML, CSS and classic `<script>` tags.
@@ -53,7 +53,11 @@ Konami's page is the authority, but it lists names, not passcodes, and carries n
 - **History accumulates.** Konami only publishes the current list, so each change is added as a new dated list on top. It's dated the day the change was first seen (`dateSource: "detected"`) unless `--date` gives the announced day (`"announced"`). An unmerged refresh PR keeps its first-seen date rather than moving daily.
 - **A broken page isn't a new list.** Fewer than 100 rows, or a near-empty card database, is refused rather than written.
 
-Each list carries the standard 100-point `cap`.
+Each list carries the standard 100-point `cap`. Events can set their own, so the validator has a **Point cap** field (remembered per browser; clear it to go back to the list's cap).
+
+**How Genesys validates.** The Forbidden & Limited list doesn't apply: every card is allowed at three. Every copy in the Main, Extra and Side Deck counts toward the cap, and alt-art passcodes cost what the base card does. Link and Pendulum Monsters aren't allowed at all and are flagged individually. Deck sizes are the TCG's. Each tile shows its cost, and the verdict bar shows the total against the cap with how many points to cut.
+
+On the Lists page, Genesys lists group by cost band and compare like banlists do: *Newly pointed*, *Raised*, *Lowered* and *Back to 0* take the place of the status categories.
 
 ### Scheduled refresh
 
@@ -204,7 +208,7 @@ Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Dep
 
 ### Checks that run before publishing
 
-`npm test` — 73 tests across 7 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic and the Genesys point list.
+`npm test` — 85 tests across 8 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic, and the Genesys point list and validation.
 
 `npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
 
@@ -248,6 +252,7 @@ The Publish page takes a `.conf` or JSON file, then runs it through a set of che
 | TCG | yes | yes | 40–60 | ≤15 | ≤15 |
 | OCG | yes | no | 40–60 | ≤15 | ≤15 |
 | Master Duel | no | no | 40–60 | ≤15 | — |
+| Genesys | yes | no | 40–60 | ≤15 | ≤15 |
 
 Copy limits count Main, Extra and Side **together**, per the official rules — three copies split across two piles is still three copies. Traditional format converts Forbidden to Limited rather than removing the card.
 
@@ -279,7 +284,7 @@ site.webmanifest      installable-app metadata
 robots.txt sitemap.xml
 .github/workflows/deploy.yml   test, build, publish
 .github/workflows/refresh.yml  daily scrape -> refresh PR
-tests/                73 tests, run with npm test
+tests/                85 tests, run with npm test
 assets/styles.css     design tokens, both themes, all layout
 assets/icon.svg       app icon
 js/core.js            parsers, card database, validation engine, shared UI
