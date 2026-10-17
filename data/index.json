@@ -14,6 +14,13 @@
       "schema": "millennium-scale/genesys@1",
       "generated": "2026-10-17T06:27:15.882Z",
       "source": "https://www.yugioh-card.com/en/genesys/"
+    },
+    {
+      "file": "data/genesys-ocg.json",
+      "kind": "points",
+      "schema": "millennium-scale/genesys@1",
+      "generated": "2026-10-17T17:07:59.876Z",
+      "source": "https://www.yugioh-card.com/japan/howto/genesys/"
     }
   ],
   "formats": [
@@ -67,6 +74,19 @@
         "id": "GEN-2026-10-05",
         "date": "2026-10-05",
         "entries": 750
+      }
+    },
+    {
+      "kind": "points",
+      "key": "GEN-OCG",
+      "name": "Genesys (OCG)",
+      "file": "data/genesys-ocg.json",
+      "lists": 3,
+      "oldest": "2026-06-01",
+      "current": {
+        "id": "GEN-OCG-2026-10-01",
+        "date": "2026-10-01",
+        "entries": 1091
       }
     }
   ]

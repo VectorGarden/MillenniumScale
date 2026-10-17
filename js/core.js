@@ -30,18 +30,29 @@
     MD:  { name: 'Master Duel',  hasSide: false, hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 0,  maxCopies: 3 },
     // Genesys ignores the F&L list: every card is at 3, some cost points,
     // and the whole deck (Side included) must fit under the event's cap.
-    GEN: { name: 'Genesys',      hasSide: true,  hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3, points: true, pointCap: 100 }
+    GEN: { name: 'Genesys',      hasSide: true,  hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3, points: true, pointCap: 100 },
+    // Japan's own point lists, each limited to cards distributed in Japan by
+    // its cutoff (list.cardPool.releasedBy).
+    'GEN-OCG': { name: 'Genesys (OCG)', hasSide: true, hasTraditional: false, mainMin: 40, mainMax: 60, extraMax: 15, sideMax: 15, maxCopies: 3, points: true, pointCap: 100, region: 'OCG' }
   };
 
   MS.rulesFor = function (formatKey) {
     return MS.FORMAT_RULES[formatKey] || MS.FORMAT_RULES.TCG;
   };
 
-  /** Why a card can't be played in Genesys at all, or null. */
-  MS.genesysBlocked = function (card) {
-    if (!card || !card.frame) return null;
+  /**
+   * Why a card can't be played in Genesys at all, or null. A list with a
+   * card pool also rules out cards first released in Japan after its cutoff;
+   * a card with no known Japanese release date is given the benefit of the doubt.
+   */
+  MS.genesysBlocked = function (card, list) {
+    if (!card) return null;
     if (card.frame === 'link') return 'Link Monsters aren\u2019t allowed in Genesys';
-    if (card.frame.indexOf('pendulum') !== -1) return 'Pendulum Monsters aren\u2019t allowed in Genesys';
+    if (card.frame && card.frame.indexOf('pendulum') !== -1) return 'Pendulum Monsters aren\u2019t allowed in Genesys';
+    var cutoff = list && list.cardPool && list.cardPool.releasedBy;
+    if (cutoff && card.ocgDate && card.ocgDate > cutoff) {
+      return 'Released in Japan ' + MS.formatDate(card.ocgDate) + ', after this list\u2019s card pool closed (' + MS.formatDate(cutoff) + ')';
+    }
     return null;
   };
 
@@ -778,7 +789,8 @@
   MS.banlists = {
     all: function () {
       var bundled = ((global.MS_BANLISTS && global.MS_BANLISTS.formats) || [])
-        .concat((global.MS_GENESYS && global.MS_GENESYS.formats) || []);
+        .concat((global.MS_GENESYS && global.MS_GENESYS.formats) || [])
+        .concat((global.MS_GENESYS_OCG && global.MS_GENESYS_OCG.formats) || []);
       var local = MS.prefs.get('customLists', []);
       var byKey = Object.create(null);
       var order = [];
@@ -866,7 +878,8 @@
   /** When a card first became legal, in the region that matters here. */
   MS.releaseDate = function (card, formatKey) {
     if (!card) return null;
-    return formatKey === 'OCG' ? (card.ocgDate || card.tcgDate) : (card.tcgDate || card.ocgDate);
+    var ocg = formatKey === 'OCG' || MS.rulesFor(formatKey).region === 'OCG';
+    return ocg ? (card.ocgDate || card.tcgDate) : (card.tcgDate || card.ocgDate);
   };
 
   /** Did this card exist yet on the day the list took effect? */
@@ -1104,7 +1117,7 @@
         });
       }
       if (pointsMode) {
-        e.blocked = MS.genesysBlocked(e.card);
+        e.blocked = MS.genesysBlocked(e.card, list);
         if (e.blocked) {
           e.illegal = true;
           problems.push({ kind: 'blocked', card: e, text: e.name, why: e.blocked + ' — remove all ' + e.total + '.' });

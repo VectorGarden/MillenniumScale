@@ -59,9 +59,24 @@ Each list carries the standard 100-point `cap`. Events can set their own, so the
 
 On the Lists page, Genesys lists group by cost band and compare like banlists do: *Newly pointed*, *Raised*, *Lowered* and *Back to 0* take the place of the status categories.
 
+### Genesys points (OCG)
+
+Japan runs its own Genesys lists, with their own point values. `data/genesys-ocg.js` holds every list [Konami Japan](https://www.yugioh-card.com/japan/howto/genesys/) has issued, each with its announced effective date and **card pool**: a card first distributed in Japan after that list's cutoff can't be used.
+
+```bash
+node tools/fetch-genesys-ocg.mjs    # fetch every list; writes only if anything changed
+```
+
+- **History comes from Konami.** Each list has its own page and date, so all of them are fetched, and none needs dating by hand. A list that drops off Konami's page stays in the archive.
+- **Japanese names are resolved once.** A name is looked up in Konami's card database (name → Konami card id, exact match after folding full-width characters), then mapped to a passcode via YGOPRODeck's `konami_id`. The published data keeps each card's `jaName`, so later runs reuse it and only look up names they've never seen. The first build made about 1,200 lookups at one a second; a normal day makes none.
+- **Unplaced names are loud.** A name with no exact match counts as 0 points until fixed, so the refresh PR lists each one with ⚠️. Fix it with an entry in `ALIASES` in `tools/lib/genesys-ocg.mjs`.
+- **The card pool is checked.** The validator flags a card whose first Japanese release is after the list's cutoff. A card with no known Japanese release date isn't flagged.
+
+On the Lists page, Genesys (OCG) shows each card's English name, and search also matches the Japanese one.
+
 ### Scheduled refresh
 
-`.github/workflows/refresh.yml` re-runs both fetchers every day at 07:23 UTC (and on demand from the Actions tab). When upstream has changed, it runs the full test suite and link check against the new data, then opens a pull request from `bot/data-refresh` whose description says what moved: new lists with how many cards each changed, upstream corrections, and re-dated lists. Merging that PR is the only human step; the push to `main` deploys it.
+`.github/workflows/refresh.yml` re-runs all three fetchers every day at 07:23 UTC (and on demand from the Actions tab). When upstream has changed, it runs the full test suite and link check against the new data, then opens a pull request from `bot/data-refresh` whose description says what moved: new lists with how many cards each changed, upstream corrections, and re-dated lists. Merging that PR is the only human step; the push to `main` deploys it.
 
 The fetcher is built to run unattended:
 
@@ -86,6 +101,7 @@ Everything the site knows is published as static JSON beside the pages, so other
 | `https://scale.reizu.dev/data/index.json` | A few KB. Each format, its list count and range, the current list's id, date and size, and when each bundle last changed. Poll this one. |
 | `https://scale.reizu.dev/data/banlists.json` | The whole banlist archive, schema `millennium-scale/banlists@1`. |
 | `https://scale.reizu.dev/data/genesys.json` | Every Genesys point list, schema `millennium-scale/genesys@1`. Same shape, with `points` in place of `status` and a `cap` per list. |
+| `https://scale.reizu.dev/data/genesys-ocg.json` | Every OCG (Japan) Genesys list, same schema, plus `cardPool.releasedBy` per list and `jaName` per card. |
 
 `index.json` carries no timestamp of its own and is rebuilt from the bundles, so it changes only when the data does. Compare its `current.id` values, or a bundle's `generated`, to tell whether there's anything new to download.
 
@@ -208,7 +224,7 @@ Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Dep
 
 ### Checks that run before publishing
 
-`npm test` — 85 tests across 8 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic, and the Genesys point list and validation.
+`npm test` — 96 tests across 9 suites covering the parsers, validation engine, list diff, bundled archive, deck import, the refresh logic, and the TCG and OCG Genesys point lists and validation.
 
 `npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
 
@@ -253,6 +269,7 @@ The Publish page takes a `.conf` or JSON file, then runs it through a set of che
 | OCG | yes | no | 40–60 | ≤15 | ≤15 |
 | Master Duel | no | no | 40–60 | ≤15 | — |
 | Genesys | yes | no | 40–60 | ≤15 | ≤15 |
+| Genesys (OCG) | yes | no | 40–60 | ≤15 | ≤15 |
 
 Copy limits count Main, Extra and Side **together**, per the official rules — three copies split across two piles is still three copies. Traditional format converts Forbidden to Limited rather than removing the card.
 
@@ -284,7 +301,7 @@ site.webmanifest      installable-app metadata
 robots.txt sitemap.xml
 .github/workflows/deploy.yml   test, build, publish
 .github/workflows/refresh.yml  daily scrape -> refresh PR
-tests/                85 tests, run with npm test
+tests/                96 tests, run with npm test
 assets/styles.css     design tokens, both themes, all layout
 assets/icon.svg       app icon
 js/core.js            parsers, card database, validation engine, shared UI
@@ -295,12 +312,15 @@ data/banlists.js      the archive (generated, ~1.8 MB / ~250 KB gzipped)
 data/banlists.json    the same data, pretty-printed, for other tools
 data/genesys.js       Genesys point lists (generated)
 data/genesys.json     the same, pretty-printed
+data/genesys-ocg.js   OCG (Japan) Genesys point lists (generated)
+data/genesys-ocg.json the same, pretty-printed
 data/index.json       small manifest of every bundle and format, for polling
 data/idmap.js         optional foreign-id -> passcode table (generated with --idmap)
 data/cards.js         optional offline card details (generated with --cards)
 assets/icons/         PNG set, maskable variants, social card
 tools/fetch-banlists.mjs
 tools/fetch-genesys.mjs
+tools/fetch-genesys-ocg.mjs
 tools/lib/            change detection, refresh summary, manifest
 tools/data-differs.mjs
 tools/build-site.mjs  assembles _site/ for publishing
@@ -309,4 +329,4 @@ tools/check-links.mjs
 
 ## Credits
 
-Banlist data from [ygo.anihelp.co.uk](https://ygo.anihelp.co.uk/). Genesys points from [Konami](https://www.yugioh-card.com/en/genesys/), cross-checked against YGOPRODeck. Card data from [YGOPRODeck](https://ygoprodeck.com/). Yu-Gi-Oh! is a trademark of Konami; this is an unaffiliated fan tool.
+Banlist data from [ygo.anihelp.co.uk](https://ygo.anihelp.co.uk/). Genesys points from [Konami](https://www.yugioh-card.com/en/genesys/), cross-checked against YGOPRODeck, and from [Konami Japan](https://www.yugioh-card.com/japan/howto/genesys/), with names resolved through Konami's card database. Card data from [YGOPRODeck](https://ygoprodeck.com/). Yu-Gi-Oh! is a trademark of Konami; this is an unaffiliated fan tool.

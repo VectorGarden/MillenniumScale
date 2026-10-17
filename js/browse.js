@@ -155,6 +155,7 @@
       $('#list-lede').textContent =
         'Genesys point list \u00b7 ' + list.cards.length + ' cards cost points, every other card is 0 \u00b7 standard cap ' +
         (list.cap != null ? list.cap : MS.rulesFor(state.formatKey).pointCap) +
+        (list.cardPool && list.cardPool.releasedBy ? ' \u00b7 cards released in Japan by ' + MS.formatDate(list.cardPool.releasedBy) : '') +
         (list.dateSource === 'detected' ? ' \u00b7 dated when the change was first seen' : '');
     } else {
       var counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
@@ -244,7 +245,7 @@
     list.cards.forEach(function (c) {
       var card = MS.cards.get(c.id);
       byId[c.id] = {
-        id: c.id, status: c.status, points: c.points, card: card,
+        id: c.id, status: c.status, points: c.points, jaName: c.jaName, card: card,
         name: card ? card.name : (c.name || MS.passcode(c.id)),
         change: null
       };
@@ -270,7 +271,7 @@
     if (active.length && active.indexOf(kindOf(r)) === -1) return false;
     if (state.filter !== 'all' && String(r.status) !== state.filter) return false;
     if (state.query) {
-      var hay = (r.name + ' ' + r.id + ' ' + MS.passcode(r.id) + ' ' +
+      var hay = (r.name + ' ' + (r.jaName || '') + ' ' + r.id + ' ' + MS.passcode(r.id) + ' ' +
                  (r.card ? r.card.race + ' ' + r.card.type + ' ' + (r.card.attribute || '') : '')).toLowerCase();
       if (hay.indexOf(state.query) === -1) return false;
     }

@@ -1,7 +1,7 @@
 name: Refresh data
 
 # Once a day, re-scrape the upstream banlist archive and Konami's Genesys
-# point list. When anything changed, run the
+# point lists (TCG and OCG). When anything changed, run the
 # full test suite and link check against the new data, then open (or update)
 # a pull request on bot/data-refresh with a summary of what moved. Merging it
 # is the human step, and the push to main that follows is what deploys.
@@ -47,14 +47,21 @@ jobs:
             echo '{}' > "$RUNNER_TEMP/seen-genesys.json"
           fi
 
-      # Sequential on purpose: timed locally at 2s and 1s, so running them in
-      # parallel would save about a second. Not worth the coordination.
+      # Sequential on purpose: timed locally at 2s, 1s and 1s (the OCG fetch, on a
+      # day with no new card names), so running them in
+      # parallel would save about two seconds. Not worth the coordination.
       # --allow-shrink lets a list that vanished upstream through, flagged in
       # the summary for review. A whole format going missing is still refused.
       - name: Fetch banlists
         run: node tools/fetch-banlists.mjs --allow-shrink --summary "$RUNNER_TEMP/summary-1-banlists.md"
       - name: Fetch Genesys points
         run: node tools/fetch-genesys.mjs --seen "$RUNNER_TEMP/seen-genesys.json" --summary "$RUNNER_TEMP/summary-2-genesys.md"
+      # Konami Japan's site sits behind bot protection that may refuse runner
+      # IPs. If it does, the step shows as failed but the other two sources
+      # still get proposed.
+      - name: Fetch OCG Genesys points
+        continue-on-error: true
+        run: node tools/fetch-genesys-ocg.mjs --summary "$RUNNER_TEMP/summary-3-genesys-ocg.md"
 
       - name: Compare with main and the open refresh branch
         id: diff
