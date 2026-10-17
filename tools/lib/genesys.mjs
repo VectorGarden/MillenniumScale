@@ -32,7 +32,8 @@ const ENTITIES = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ', 
 function decode(s) {
   return s
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    // Older captures drop the semicolon on numeric entities (K9-&#216&#216 Lupis).
+    .replace(/&#(\d+);?/g, (_, d) => String.fromCodePoint(Number(d)))
     .replace(/&([a-z]+);/gi, (m, n) => ENTITIES[n.toLowerCase()] ?? m);
 }
 
@@ -57,9 +58,12 @@ export function parseKonamiTable(html) {
 /**
  * @param rows   [{name, points}] from Konami
  * @param cards  YGOPRODeck card records (cardinfo.php?misc=yes)
+ * @param opts.fillFromApi  keep YGOPRODeck's value for pointed cards no row
+ *        resolved to (default true). Off for historical lists: YGOPRODeck only
+ *        knows today's points.
  * @returns {cards, mismatches, unresolved, apiOnly}
  */
-export function resolvePoints(rows, cards) {
+export function resolvePoints(rows, cards, { fillFromApi = true } = {}) {
   const byName = new Map();
   for (const c of cards) {
     const k = normName(c.name);
@@ -71,13 +75,15 @@ export function resolvePoints(rows, cards) {
   const mismatches = [], unresolved = [];
   for (const r of rows) {
     const card = byName.get(normName(ALIASES[r.name] || r.name));
-    if (!card) { unresolved.push(r); continue; }
-    if (apiPoints(card) !== r.points) mismatches.push({ id: card.id, name: card.name, konami: r.points, ygoprodeck: apiPoints(card) });
+    // An unplaced 0-point row costs nothing either way (Konami once put an
+    // "Updated 6/23/2026" note in the table), so only pointed ones count.
+    if (!card) { if (r.points > 0) unresolved.push(r); continue; }
+    if (fillFromApi && apiPoints(card) !== r.points) mismatches.push({ id: card.id, name: card.name, konami: r.points, ygoprodeck: apiPoints(card) });
     out.set(card.id, { id: card.id, name: card.name, points: r.points });
   }
 
   const apiOnly = [];
-  for (const c of cards) {
+  for (const c of fillFromApi ? cards : []) {
     if (apiPoints(c) > 0 && !out.has(c.id)) {
       apiOnly.push({ id: c.id, name: c.name, points: apiPoints(c) });
       out.set(c.id, { id: c.id, name: c.name, points: apiPoints(c) });

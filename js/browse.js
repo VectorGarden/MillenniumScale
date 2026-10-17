@@ -153,10 +153,13 @@
     $('#list-title').textContent = MS.formatDate(list.date);
     if (pointsMode()) {
       $('#list-lede').textContent =
-        'Genesys point list \u00b7 ' + list.cards.length + ' cards cost points, every other card is 0 \u00b7 standard cap ' +
+        'Genesys point list' + (list.note ? ' \u2014 ' + list.note : '') + ' \u00b7 ' +
+        list.cards.length + ' cards cost points, every other card is 0 \u00b7 standard cap ' +
         (list.cap != null ? list.cap : MS.rulesFor(state.formatKey).pointCap) +
         (list.cardPool && list.cardPool.releasedBy ? ' \u00b7 cards released in Japan by ' + MS.formatDate(list.cardPool.releasedBy) : '') +
-        (list.dateSource === 'detected' ? ' \u00b7 dated when the change was first seen' : '');
+        (list.dateSource === 'detected' ? ' \u00b7 dated when the change was first seen' : '') +
+        (list.dateSource === 'release' ? ' \u00b7 dated by the set\u2019s TCG release' : '') +
+        (list.rebuilt ? ' \u00b7 rebuilt from Konami\u2019s announcement, as no copy of the page survives' : '');
     } else {
       var counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
       list.cards.forEach(function (c) { counts[c.status]++; });
