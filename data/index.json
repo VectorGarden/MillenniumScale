@@ -5,7 +5,7 @@
       "file": "data/banlists.json",
       "kind": "banlist",
       "schema": "millennium-scale/banlists@1",
-      "generated": "2026-08-22T01:05:19.069Z",
+      "generated": "2026-10-17T17:13:22.411Z",
       "source": "https://ygo.anihelp.co.uk"
     },
     {
@@ -29,12 +29,12 @@
       "key": "TCG",
       "name": "TCG",
       "file": "data/banlists.json",
-      "lists": 79,
+      "lists": 81,
       "oldest": "2002-05-01",
       "current": {
-        "id": "TCG-2026-05-18",
-        "date": "2026-05-18",
-        "entries": 226
+        "id": "TCG-2026-10-17",
+        "date": "2026-10-17",
+        "entries": 230
       }
     },
     {
@@ -42,12 +42,12 @@
       "key": "MD",
       "name": "Master Duel",
       "file": "data/banlists.json",
-      "lists": 51,
+      "lists": 55,
       "oldest": "2022-08-31",
       "current": {
-        "id": "MD-2026-07-01",
-        "date": "2026-07-01",
-        "entries": 202
+        "id": "MD-2026-10-06",
+        "date": "2026-10-06",
+        "entries": 204
       }
     },
     {
@@ -55,12 +55,12 @@
       "key": "OCG",
       "name": "OCG",
       "file": "data/banlists.json",
-      "lists": 81,
+      "lists": 82,
       "oldest": "2000-02-01",
       "current": {
-        "id": "OCG-2026-07-01",
-        "date": "2026-07-01",
-        "entries": 197
+        "id": "OCG-2026-10-01",
+        "date": "2026-10-01",
+        "entries": 201
       }
     },
     {
