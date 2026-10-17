@@ -101,7 +101,8 @@ export function describeChanges(previous, next, { valueFn = statusOf } = {}) {
     f.lists.forEach((l, i) => {
       const was = oldById.get(l.id);
       if (movedTo.has(l.id)) return;
-      if (!was) added.push({ id: l.id, date: l.date, entries: l.cards.length, changed: entryChanges(f.lists[i + 1], l, valueFn) });
+      // The oldest list has nothing before it to compare with.
+      if (!was) added.push({ id: l.id, date: l.date, entries: l.cards.length, changed: f.lists[i + 1] ? entryChanges(f.lists[i + 1], l, valueFn) : null });
       else if (contentOf(was) !== contentOf(l)) updated.push({ id: l.id, date: l.date, entries: l.cards.length, changed: entryChanges(was, l, valueFn) });
     });
     const redated = moves.map((r) => ({ from: r.from.date, to: r.to.date, id: r.to.id }));
@@ -117,7 +118,11 @@ export function summaryMarkdown(changes, { title = 'Banlist archive', unit = 'st
   const lines = [`### ${title}`, ''];
   for (const c of changes) {
     lines.push(`**${c.name}**`, '');
-    for (const l of c.added) lines.push(`- New list **${l.date}** — ${l.entries} entries, ${l.changed} ${unit} change${l.changed === 1 ? '' : 's'} from the previous list`);
+    for (const l of c.added) {
+      lines.push(l.changed === null
+        ? `- New list **${l.date}** — ${l.entries} entries, the first in the archive`
+        : `- New list **${l.date}** — ${l.entries} entries, ${l.changed} ${unit} change${l.changed === 1 ? '' : 's'} from the previous list`);
+    }
     for (const l of c.updated) lines.push(`- Corrected **${l.date}** — ${l.changed} entr${l.changed === 1 ? 'y' : 'ies'} changed upstream`);
     for (const l of c.redated) lines.push(`- Re-dated **${l.from}** → **${l.to}** — same cards, exact day now known`);
     for (const l of c.removed) lines.push(`- ⚠️ Removed **${l.date}** — no longer upstream. Check this is real before merging.`);
