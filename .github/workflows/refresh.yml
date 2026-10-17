@@ -1,0 +1,111 @@
+name: Refresh data
+
+# Once a day, re-scrape the upstream archive. When anything changed, run the
+# full test suite and link check against the new data, then open (or update)
+# a pull request on bot/data-refresh with a summary of what moved. Merging it
+# is the human step, and the push to main that follows is what deploys.
+#
+# Needs "Allow GitHub Actions to create and approve pull requests" turned on
+# under Settings -> Actions -> General -> Workflow permissions. Without it the
+# branch is still pushed and the job fails with a link to open the PR by hand.
+
+on:
+  schedule:
+    - cron: '23 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+env:
+  BRANCH: bot/data-refresh
+
+jobs:
+  refresh:
+    name: Scrape and propose
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      # --allow-shrink lets a list that vanished upstream through, flagged in
+      # the summary for review. A whole format going missing is still refused.
+      - name: Fetch banlists
+        run: node tools/fetch-banlists.mjs --allow-shrink --summary "$RUNNER_TEMP/summary-1-banlists.md"
+
+      - name: Compare with main and the open refresh branch
+        id: diff
+        run: |
+          cat "$RUNNER_TEMP"/summary-*.md >> "$GITHUB_STEP_SUMMARY"
+          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing changed upstream." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          if git fetch --quiet origin "$BRANCH" 2>/dev/null; then
+            echo "stale=$(node tools/data-differs.mjs FETCH_HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Tests
+        if: steps.diff.outputs.changed == 'true' && steps.diff.outputs.stale == 'true'
+        run: npm test
+
+      - name: Build and link-check
+        if: steps.diff.outputs.changed == 'true' && steps.diff.outputs.stale == 'true'
+        run: npm run build && node tools/check-links.mjs _site
+
+      - name: Open or update the refresh pull request
+        if: steps.diff.outputs.changed == 'true' && steps.diff.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          body="$RUNNER_TEMP/body.md"
+          {
+            echo "Scheduled scrape of the upstream archives found changes."
+            echo
+            cat "$RUNNER_TEMP"/summary-*.md
+            echo
+            echo "Tests and the link check passed against this data in [the refresh run]($RUN_URL)."
+            echo "Lists marked ⚠️ are gone upstream; confirm that's real before merging."
+            echo
+            echo "This branch is force-pushed by each refresh that finds something new, so don't commit to it."
+          } > "$body"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$BRANCH"
+          git add data/
+          git commit --quiet -m "Refresh data from upstream" -m "$(cat "$RUNNER_TEMP"/summary-*.md)"
+          git push --force --quiet origin "$BRANCH"
+
+          # Events from GITHUB_TOKEN don't start workflows, except dispatch, so
+          # start the CI run on the branch explicitly to give the PR its checks.
+          gh workflow run deploy.yml --ref "$BRANCH" || echo "::warning::Couldn't start CI on $BRANCH"
+
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number -q '.[].number')" ]; then
+            gh pr edit "$BRANCH" --body-file "$body"
+            echo "Updated the open refresh PR." >> "$GITHUB_STEP_SUMMARY"
+          elif gh pr create --base main --head "$BRANCH" --title "Refresh data from upstream" \
+                 --body-file "$body" --label data --label automation --assignee binarybeak; then
+            echo "Opened a refresh PR." >> "$GITHUB_STEP_SUMMARY"
+          else
+            compare="${{ github.server_url }}/${{ github.repository }}/compare/main...$BRANCH?expand=1"
+            echo "::error::Pushed $BRANCH but couldn't open a PR. Enable 'Allow GitHub Actions to create and approve pull requests' in Settings -> Actions -> General, or open it by hand: $compare"
+            exit 1
+          fi
+
+      - name: Already proposed
+        if: steps.diff.outputs.changed == 'true' && steps.diff.outputs.stale != 'true'
+        run: echo "The open refresh PR already has this data; nothing pushed." >> "$GITHUB_STEP_SUMMARY"

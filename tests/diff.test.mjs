@@ -13,10 +13,14 @@ export default function run() {
     d.all.forEach((e) => { if (e.was === e.now) throw new Error('unchanged entry leaked into all[]'); });
   });
 
+  // Pinned by id rather than "the current list", so the scheduled refresh can
+  // add newer lists without breaking the tests.
   t('matches the published changes for May 18th 2026', () => {
     const f = MS.banlists.format('TCG');
+    const i = f.lists.findIndex((l) => l.id === 'TCG-2026-05-18');
+    if (i < 0) throw new Error('TCG-2026-05-18 is missing from the archive');
     const by = {};
-    MS.diffLists(f.lists[1], f.lists[0], { formatKey: 'TCG' }).all.forEach((e) => { by[e.name] = e; });
+    MS.diffLists(f.lists[i + 1], f.lists[i], { formatKey: 'TCG' }).all.forEach((e) => { by[e.name] = e; });
     eq(by['K9-04 Noroi'].now, 0, 'K9-04 Noroi newly Forbidden: ');
     eq(by['Naturia Rosewhip'].now, 0, 'Naturia Rosewhip newly Forbidden: ');
     eq([by['Fairy Tail - Snow'].was, by['Fairy Tail - Snow'].now], [0, 1], 'Snow: ');
@@ -44,7 +48,7 @@ export default function run() {
   t('works across a 24-year gap', () => {
     const f = MS.banlists.format('TCG');
     const d = MS.diffLists(f.lists[f.lists.length - 1], f.lists[0], { formatKey: 'TCG' });
-    S.note(`2002-05-01 \u2192 2026-05-18: +${d.added.length} new, ${d.removed.length} off, ${d.unchanged} same`);
+    S.note(`${f.lists[f.lists.length - 1].date} \u2192 ${f.lists[0].date}: +${d.added.length} new, ${d.removed.length} off, ${d.unchanged} same`);
     if (d.added.length < 150) throw new Error('expected a large diff');
   });
 

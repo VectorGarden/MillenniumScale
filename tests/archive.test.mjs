@@ -35,9 +35,11 @@ export default function run() {
     }
   });
 
-  t('the current TCG list matches the source', () => {
-    const l = MS.banlists.get('TCG');
-    eq(l.date, '2026-05-18');
+  // Pinned by id rather than "the current list", so the scheduled refresh can
+  // add newer lists without breaking the tests.
+  t('the May 18th 2026 TCG list matches the source', () => {
+    const l = MS.banlists.get('TCG', 'TCG-2026-05-18');
+    eq(l.id, 'TCG-2026-05-18');
     const counts = { 0: 0, 1: 0, 2: 0, 3: 0 };
     l.cards.forEach((c) => counts[c.status]++);
     eq([counts[0], counts[1], counts[2]], [119, 97, 10]);
@@ -45,15 +47,16 @@ export default function run() {
 
   t('3x Maxx "C" is Forbidden in TCG, legal at one in Traditional', () => {
     const filler = new Array(37).fill(0).map((_, i) => 900000 + i);
-    const l = MS.banlists.get('TCG');
+    const l = MS.banlists.get('TCG', 'TCG-2026-05-18');
     eq(MS.validate({ main: filler.concat([23434538, 23434538, 23434538]), extra: [], side: [] }, l, { formatKey: 'TCG' }).legal, false);
     eq(MS.validate({ main: filler.concat([23434538, 900099, 900098]), extra: [], side: [] }, l, { formatKey: 'TCG', mode: 'traditional' }).legal, true);
   });
 
-  t('Maxx "C" is Limited in the current MD list, Semi in Oct 2025', () => {
+  t('Maxx "C" is Limited in the July 2026 MD list, Semi in Oct 2025', () => {
     const filler = new Array(38).fill(0).map((_, i) => 900000 + i);
     const two = { main: filler.concat([23434538, 23434538]), extra: [], side: [] };
-    eq(MS.validate(two, MS.banlists.get('MD'), { formatKey: 'MD' }).legal, false);
+    eq(MS.banlists.get('MD', 'MD-2026-07-01').id, 'MD-2026-07-01');
+    eq(MS.validate(two, MS.banlists.get('MD', 'MD-2026-07-01'), { formatKey: 'MD' }).legal, false);
     eq(MS.validate(two, MS.banlists.get('MD', 'MD-2025-10-08'), { formatKey: 'MD' }).legal, true);
   });
 
