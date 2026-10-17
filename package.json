@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "node tests/run.mjs",
+    "build": "node tools/build-site.mjs",
+    "check": "node tools/check-links.mjs .",
     "fetch": "node tools/fetch-banlists.mjs",
     "fetch:idmap": "node tools/fetch-banlists.mjs --idmap",
     "fetch:offline": "node tools/fetch-banlists.mjs --cards",
-    "check": "node tools/check-links.mjs .",
     "start": "python3 -m http.server 8080"
   },
   "engines": { "node": ">=18" }

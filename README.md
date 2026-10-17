@@ -142,26 +142,11 @@ The **Released** column shows when each card first became legal, taken from YGOP
 
 ## Deploying to GitHub Pages
 
-The repo is ready to publish at **https://scale.reizu.dev**. Three steps:
+The site is published at **https://scale.reizu.dev** by `.github/workflows/deploy.yml`.
 
-**1. Push it.**
+Every pull request and every push runs the tests, assembles the site into `_site/`, and checks that no page references a missing file. A push to `main` then publishes that same `_site/` to Pages. A failing test or a broken reference blocks the deploy.
 
-```bash
-git init
-git add .
-git commit -m "Millennium Scale"
-git branch -M main
-git remote add origin git@github.com:<you>/millennium-scale.git
-git push -u origin main
-```
-
-**2. Turn Pages on.** Repo → *Settings* → *Pages* → **Source: GitHub Actions**. Don't pick "Deploy from a branch" — the workflow in `.github/workflows/deploy.yml` handles it.
-
-**3. Set the custom domain.** Same settings page, *Custom domain* → `scale.reizu.dev` → Save, then tick **Enforce HTTPS** once the certificate is issued (usually a few minutes, occasionally up to an hour).
-
-Your `CNAME` record at the registrar should point at `<you>.github.io`. The `CNAME` file in this repo already contains `scale.reizu.dev`; GitHub reads it on each deploy, so the domain setting won't get wiped.
-
-Every push to `main` runs the tests, assembles the site, checks that no page references a missing file, and publishes. A failing test blocks the deploy.
+Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Deploy from a branch". The custom domain is `scale.reizu.dev` with HTTPS enforced; the `CNAME` file in this repo carries it on every deploy, so the setting won't get wiped. The DNS `CNAME` record at the registrar points at the account's `github.io` host.
 
 ### What gets published
 
@@ -173,13 +158,15 @@ Every push to `main` runs the tests, assembles the site, checks that no page ref
 
 `npm test` — 56 tests across 5 suites covering the parsers, validation engine, list diff, bundled archive and deck import.
 
+`npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
+
 `node tools/check-links.mjs _site` — walks every built page and confirms each local `href`/`src` resolves, that each page links a stylesheet, and that the data bundle isn't empty. This is the check that would have caught the flattened `assets/` folder, and it fails the build rather than shipping a broken page.
 
 Run both locally any time:
 
 ```bash
 npm test
-npm run check
+npm run build && node tools/check-links.mjs _site
 ```
 
 ### Serving it locally
@@ -256,6 +243,7 @@ data/idmap.js         optional foreign-id -> passcode table (generated with --id
 data/cards.js         optional offline card details (generated with --cards)
 assets/icons/         PNG set, maskable variants, social card
 tools/fetch-banlists.mjs
+tools/build-site.mjs  assembles _site/ for publishing
 tools/check-links.mjs
 ```
 
