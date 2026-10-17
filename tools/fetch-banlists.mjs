@@ -4,7 +4,14 @@
  *
  *   node tools/fetch-banlists.mjs              pull every list, write data/banlists.js + .json
  *   node tools/fetch-banlists.mjs --cards      also bundle card details for offline use
- *   node tools/fetch-banlists.mjs --only TCG   just one format
+ *   node tools/fetch-banlists.mjs --only TCG   just one format, keeping the others as they are
+ *   node tools/fetch-banlists.mjs --summary f  also write a Markdown summary of what changed to f
+ *
+ * Nothing is written when the content matches what's already on disk, so an
+ * unchanged run leaves the working tree clean. A fetch that would lose lists
+ * (a format gone, empty, or missing dates it used to have) is refused unless
+ * --allow-shrink is given: unattended runs must not turn a flaky upstream into
+ * a deleted archive.
  *
  * Source: https://ygo.anihelp.co.uk/ (TCG, /MD/, /OCG/)
  *
@@ -16,6 +23,8 @@
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { sameFormats, mergeFormats, shrinkProblems, describeChanges, summaryMarkdown } from './lib/bundle.mjs';
+import { readJSON, writeManifest } from './lib/manifest.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://ygo.anihelp.co.uk';
@@ -52,6 +61,9 @@ const ONLY = (() => { const i = args.indexOf('--only'); return i >= 0 ? args[i +
 const FROM = (() => { const i = args.indexOf('--from'); return i >= 0 ? args[i + 1] : null; })();
 /** --idmap: build data/idmap.js, translating Konami database ids to passcodes. */
 const WANT_IDMAP = args.includes('--idmap');
+/** --summary <file>: write a Markdown summary of what changed, for the refresh PR. */
+const SUMMARY = (() => { const i = args.indexOf('--summary'); return i >= 0 ? args[i + 1] : null; })();
+const ALLOW_SHRINK = args.includes('--allow-shrink');
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -303,26 +315,58 @@ for (const k of keys) {
   if (!FORMATS[k]) { console.error(`Unknown format "${k}". Try TCG, MD or OCG.`); process.exit(1); }
 }
 
-const formats = [];
-for (const k of keys) formats.push(await buildFormat(k));
+const fetched = [];
+for (const k of keys) fetched.push(await buildFormat(k));
 
-const bundle = {
-  schema: 'millennium-scale/banlists@1',
-  generated: new Date().toISOString(),
-  source: BASE,
-  formats
-};
+const previous = await readJSON(resolve(ROOT, 'data/banlists.json'));
+const formats = mergeFormats(previous?.formats, fetched, Object.keys(FORMATS));
 
-await mkdir(resolve(ROOT, 'data'), { recursive: true });
+const shrink = previous ? shrinkProblems(previous.formats, formats) : [];
+const outage = shrink.filter((p) => p.level === 'outage');
+if (shrink.length) {
+  const refuse = outage.length || !ALLOW_SHRINK;
+  console.log(`\n${refuse ? 'Refusing to write — this fetch would lose data:' : 'Removing lists upstream no longer has (--allow-shrink):'}`);
+  shrink.forEach((p) => console.log(`  ! ${p.text}`));
+  if (outage.length) {
+    console.log('A whole format is missing or empty, which means upstream is down, not changed. Re-run later.');
+    process.exit(2);
+  }
+  if (!ALLOW_SHRINK) {
+    console.log('Pass --allow-shrink if the removal is real.');
+    process.exit(2);
+  }
+}
 
-await writeFile(
-  resolve(ROOT, 'data/banlists.js'),
-  `/* Millennium Scale banlist bundle\n   Generated ${bundle.generated} from ${BASE}\n   Rebuild with: node tools/fetch-banlists.mjs */\nwindow.MS_BANLISTS = ${JSON.stringify(bundle)};\n`
-);
-await writeFile(resolve(ROOT, 'data/banlists.json'), JSON.stringify(bundle, null, 2));
+const changes = describeChanges(previous?.formats, formats);
+const changed = !previous || !sameFormats(previous.formats, formats);
 
-console.log(`\nWrote data/banlists.js and data/banlists.json`);
-console.log(`  ${formats.length} formats, ${formats.reduce((n, f) => n + f.lists.length, 0)} lists`);
+if (SUMMARY) await writeFile(resolve(SUMMARY), summaryMarkdown(changes, { title: 'Banlist archive' }));
+
+if (changed) {
+  const bundle = {
+    schema: 'millennium-scale/banlists@1',
+    generated: new Date().toISOString(),
+    source: BASE,
+    formats
+  };
+
+  await mkdir(resolve(ROOT, 'data'), { recursive: true });
+
+  await writeFile(
+    resolve(ROOT, 'data/banlists.js'),
+    `/* Millennium Scale banlist bundle\n   Generated ${bundle.generated} from ${BASE}\n   Rebuild with: node tools/fetch-banlists.mjs */\nwindow.MS_BANLISTS = ${JSON.stringify(bundle)};\n`
+  );
+  await writeFile(resolve(ROOT, 'data/banlists.json'), JSON.stringify(bundle, null, 2));
+
+  console.log(`\nWrote data/banlists.js and data/banlists.json`);
+  console.log(`  ${formats.length} formats, ${formats.reduce((n, f) => n + f.lists.length, 0)} lists`);
+  for (const c of changes) {
+    console.log(`  ${c.key}: ${c.added.length} new, ${c.updated.length} corrected, ${c.removed.length} removed`);
+  }
+} else {
+  console.log('\nNo changes upstream — data/banlists.* left as they are.');
+}
+await writeManifest(ROOT);
 
 if (WANT_IDMAP) {
   console.log('\nBuilding the Konami id -> passcode map (one large request, please be patient)');

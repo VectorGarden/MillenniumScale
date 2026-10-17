@@ -37,6 +37,35 @@ Each format publishes a combined `*CombiList.conf` holding every list it has eve
 
 **Quirks the fetcher handles.** Section names are day-first European dates (`TCG 18.05.2026` → `2026-05-18`), and older OCG lists give only a month (`OCG 08.2000` → `2000-08-01`, or the exact advertised day when the index page has one). Occasionally the archive carries two sections for one date where the later is a correction — the more complete one wins, and it says so. Three sections upstream currently have no card entries at all (`MD 31.01.2026`, `MD 21.01.2026`, `OCG 21.12.2025`); those are skipped and reported rather than imported as empty lists that would call every deck legal.
 
+### Scheduled refresh
+
+`.github/workflows/refresh.yml` re-runs the fetcher every day at 07:23 UTC (and on demand from the Actions tab). When upstream has changed, it runs the full test suite and link check against the new data, then opens a pull request from `bot/data-refresh` whose description says what moved: new lists with how many cards each changed, upstream corrections, and re-dated lists. Merging that PR is the only human step; the push to `main` deploys it.
+
+The fetcher is built to run unattended:
+
+- **No change, no diff.** It compares what it fetched with `data/banlists.json` and writes nothing when the content matches, so a quiet day leaves the tree clean. A refresh PR that already holds the latest data isn't pushed to again.
+- **Outages aren't changes.** If a whole format comes back missing or empty, it refuses to write and the job fails, rather than proposing to delete an archive.
+- **Removals are flagged, not hidden.** A list that's gone upstream is refused locally unless you pass `--allow-shrink`. The scheduled job passes it, and marks the removal ⚠️ in the PR for review.
+- **Re-dates are recognised.** A month-only section (`2015.07 TCG`) sits on the 1st until the index advertises its exact day. When it moves, the summary reports a re-date, not a removal plus an addition.
+- **`--only` is safe.** Fetching one format keeps the others as they were.
+
+```bash
+node tools/fetch-banlists.mjs --summary changes.md    # what the bot runs, minus --allow-shrink
+```
+
+The workflow needs **Allow GitHub Actions to create and approve pull requests** turned on (*Settings → Actions → General → Workflow permissions*). Without it the branch is still pushed and the run fails with a link to open the PR by hand. GitHub pauses scheduled workflows after 60 days without repository activity; re-enable it from the Actions tab if that happens.
+
+### Scraping the data
+
+Everything the site knows is published as static JSON beside the pages, so other tools can read it without scraping HTML:
+
+| URL | What it is |
+|---|---|
+| `https://scale.reizu.dev/data/index.json` | A few KB. Each format, its list count and range, the current list's id, date and size, and when each bundle last changed. Poll this one. |
+| `https://scale.reizu.dev/data/banlists.json` | The whole banlist archive, schema `millennium-scale/banlists@1`. |
+
+`index.json` carries no timestamp of its own and is rebuilt from the bundles, so it changes only when the data does. Compare its `current.id` values, or a bundle's `generated`, to tell whether there's anything new to download.
+
 ## Running it
 
 **Locally, no server.** Unzip the project, keep the folder structure intact, and double-click `index.html`. The data bundle is a `<script>` rather than a `fetch()` precisely so this works under `file://`.
@@ -156,7 +185,7 @@ Pages must be set to **Source: GitHub Actions** (*Settings → Pages*), not "Dep
 
 ### Checks that run before publishing
 
-`npm test` — 56 tests across 5 suites covering the parsers, validation engine, list diff, bundled archive and deck import.
+`npm test` — 65 tests across 6 suites covering the parsers, validation engine, list diff, bundled archive, deck import and the refresh logic.
 
 `npm run build` — copies exactly the published files into `_site/` (`tools/build-site.mjs`), failing if any is missing.
 
@@ -229,8 +258,9 @@ CNAME                 scale.reizu.dev
 favicon.ico           multi-resolution, 16 to 256px
 site.webmanifest      installable-app metadata
 robots.txt sitemap.xml
-.github/workflows/deploy.yml
-tests/                56 tests, run with npm test
+.github/workflows/deploy.yml   test, build, publish
+.github/workflows/refresh.yml  daily scrape -> refresh PR
+tests/                65 tests, run with npm test
 assets/styles.css     design tokens, both themes, all layout
 assets/icon.svg       app icon
 js/core.js            parsers, card database, validation engine, shared UI
@@ -239,10 +269,13 @@ js/browse.js          archive page
 js/publish.js         publish page
 data/banlists.js      the archive (generated, ~1.8 MB / ~250 KB gzipped)
 data/banlists.json    the same data, pretty-printed, for other tools
+data/index.json       small manifest of every bundle and format, for polling
 data/idmap.js         optional foreign-id -> passcode table (generated with --idmap)
 data/cards.js         optional offline card details (generated with --cards)
 assets/icons/         PNG set, maskable variants, social card
 tools/fetch-banlists.mjs
+tools/lib/            change detection, refresh summary, manifest
+tools/data-differs.mjs
 tools/build-site.mjs  assembles _site/ for publishing
 tools/check-links.mjs
 ```

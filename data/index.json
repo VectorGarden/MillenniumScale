@@ -1,0 +1,53 @@
+{
+  "schema": "millennium-scale/index@1",
+  "bundles": [
+    {
+      "file": "data/banlists.json",
+      "kind": "banlist",
+      "schema": "millennium-scale/banlists@1",
+      "generated": "2026-08-22T01:05:19.069Z",
+      "source": "https://ygo.anihelp.co.uk"
+    }
+  ],
+  "formats": [
+    {
+      "kind": "banlist",
+      "key": "TCG",
+      "name": "TCG",
+      "file": "data/banlists.json",
+      "lists": 79,
+      "oldest": "2002-05-01",
+      "current": {
+        "id": "TCG-2026-05-18",
+        "date": "2026-05-18",
+        "entries": 226
+      }
+    },
+    {
+      "kind": "banlist",
+      "key": "MD",
+      "name": "Master Duel",
+      "file": "data/banlists.json",
+      "lists": 51,
+      "oldest": "2022-08-31",
+      "current": {
+        "id": "MD-2026-07-01",
+        "date": "2026-07-01",
+        "entries": 202
+      }
+    },
+    {
+      "kind": "banlist",
+      "key": "OCG",
+      "name": "OCG",
+      "file": "data/banlists.json",
+      "lists": 81,
+      "oldest": "2000-02-01",
+      "current": {
+        "id": "OCG-2026-07-01",
+        "date": "2026-07-01",
+        "entries": 197
+      }
+    }
+  ]
+}
