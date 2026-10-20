@@ -5,7 +5,7 @@
       "file": "data/banlists.json",
       "kind": "banlist",
       "schema": "millennium-scale/banlists@1",
-      "generated": "2026-10-17T17:13:22.411Z",
+      "generated": "2026-10-20T12:49:11.494Z",
       "source": "https://ygo.anihelp.co.uk"
     },
     {
@@ -29,12 +29,12 @@
       "key": "TCG",
       "name": "TCG",
       "file": "data/banlists.json",
-      "lists": 81,
+      "lists": 83,
       "oldest": "2002-05-01",
       "current": {
-        "id": "TCG-2026-10-17",
-        "date": "2026-10-17",
-        "entries": 230
+        "id": "TCG-2026-10-19",
+        "date": "2026-10-19",
+        "entries": 256
       }
     },
     {
@@ -60,7 +60,7 @@
       "current": {
         "id": "OCG-2026-10-01",
         "date": "2026-10-01",
-        "entries": 201
+        "entries": 202
       }
     },
     {
