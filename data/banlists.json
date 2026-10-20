@@ -1,6 +1,6 @@
 {
   "schema": "millennium-scale/banlists@1",
-  "generated": "2026-10-17T17:13:22.411Z",
+  "generated": "2026-10-20T12:49:11.494Z",
   "source": "https://ygo.anihelp.co.uk",
   "formats": [
     {
@@ -8,6 +8,2556 @@
       "name": "TCG",
       "source": "https://ygo.anihelp.co.uk/",
       "lists": [
+        {
+          "id": "TCG-2026-10-19",
+          "date": "2026-10-19",
+          "label": "2026-10-19",
+          "confName": "TCG 19.10.2026",
+          "whitelist": false,
+          "source": "https://ygo.anihelp.co.uk/public/TCG/TCGCombiList.conf",
+          "cards": [
+            {
+              "id": 440556,
+              "name": "Bahamut Shark",
+              "status": 0
+            },
+            {
+              "id": 1041278,
+              "name": "Branded Expulsion",
+              "status": 0
+            },
+            {
+              "id": 1357146,
+              "name": "Ronintoadin",
+              "status": 0
+            },
+            {
+              "id": 3040496,
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
+              "status": 0
+            },
+            {
+              "id": 3280747,
+              "name": "Sixth Sense",
+              "status": 0
+            },
+            {
+              "id": 3679218,
+              "name": "Knightmare Mermaid",
+              "status": 0
+            },
+            {
+              "id": 3685372,
+              "name": "CXyz Gimmick Puppet Fanatix Machinix",
+              "status": 0
+            },
+            {
+              "id": 4280258,
+              "name": "Apollousa, Bow of the Goddess",
+              "status": 0
+            },
+            {
+              "id": 5851097,
+              "name": "Vanity's Emptiness",
+              "status": 0
+            },
+            {
+              "id": 6728559,
+              "name": "Archnemeses Protos",
+              "status": 0
+            },
+            {
+              "id": 7594154,
+              "name": "Zenna's Deceiving Doll Maidens",
+              "status": 0
+            },
+            {
+              "id": 8903700,
+              "name": "Djinn Releaser of Rituals",
+              "status": 0
+            },
+            {
+              "id": 9929398,
+              "name": "Blackwing - Gofu the Vague Shadow",
+              "status": 0
+            },
+            {
+              "id": 10389142,
+              "name": "Number 42: Galaxy Tomahawk",
+              "status": 0
+            },
+            {
+              "id": 10963799,
+              "name": "Barrier Statue of the Torrent",
+              "status": 0
+            },
+            {
+              "id": 11398059,
+              "name": "King of the Feral Imps",
+              "status": 0
+            },
+            {
+              "id": 13332685,
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 0
+            },
+            {
+              "id": 15341821,
+              "name": "Dandylion",
+              "status": 0
+            },
+            {
+              "id": 16923472,
+              "name": "Wind-Up Hunter",
+              "status": 0
+            },
+            {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 0
+            },
+            {
+              "id": 17375316,
+              "name": "Confiscation",
+              "status": 0
+            },
+            {
+              "id": 19613556,
+              "name": "Heavy Storm",
+              "status": 0
+            },
+            {
+              "id": 19740112,
+              "name": "Barrier Statue of the Drought",
+              "status": 0
+            },
+            {
+              "id": 20292186,
+              "name": "Artifact Scythe",
+              "status": 0
+            },
+            {
+              "id": 21044178,
+              "name": "Abyss Dweller",
+              "status": 0
+            },
+            {
+              "id": 22593417,
+              "name": "Topologic Gumblar Dragon",
+              "status": 0
+            },
+            {
+              "id": 23002292,
+              "name": "Red Reboot",
+              "status": 0
+            },
+            {
+              "id": 23099524,
+              "name": "Pharaonic Advent",
+              "status": 0
+            },
+            {
+              "id": 23434538,
+              "name": "Maxx \"C\"",
+              "status": 0
+            },
+            {
+              "id": 23516703,
+              "name": "Summon Limit",
+              "status": 0
+            },
+            {
+              "id": 23557835,
+              "name": "Dimension Fusion",
+              "status": 0
+            },
+            {
+              "id": 23558733,
+              "name": "Phoenixian Cluster Amaryllis",
+              "status": 0
+            },
+            {
+              "id": 24094258,
+              "name": "Heavymetalfoes Electrumite",
+              "status": 0
+            },
+            {
+              "id": 24207889,
+              "name": "There Can Be Only One",
+              "status": 0
+            },
+            {
+              "id": 24224830,
+              "name": "Called by the Grave",
+              "status": 0
+            },
+            {
+              "id": 25311006,
+              "name": "Triple Tactics Talent",
+              "status": 0
+            },
+            {
+              "id": 25725326,
+              "name": "Prank-Kids Meow-Meow-Mu",
+              "status": 0
+            },
+            {
+              "id": 25926710,
+              "name": "Kelbek the Ancient Vanguard",
+              "status": 0
+            },
+            {
+              "id": 27174286,
+              "name": "Return from the Different Dimension",
+              "status": 0
+            },
+            {
+              "id": 27381364,
+              "name": "Spright Elf",
+              "status": 0
+            },
+            {
+              "id": 27519978,
+              "name": "Charmer Quartet in Bloom",
+              "status": 0
+            },
+            {
+              "id": 27548199,
+              "name": "Borreload Savage Dragon",
+              "status": 0
+            },
+            {
+              "id": 27552504,
+              "name": "Beatrice, Lady of the Eternal",
+              "status": 0
+            },
+            {
+              "id": 28143384,
+              "name": "Aerial Eater",
+              "status": 0
+            },
+            {
+              "id": 28566710,
+              "name": "Last Turn",
+              "status": 0
+            },
+            {
+              "id": 30342076,
+              "name": "Link Decoder",
+              "status": 0
+            },
+            {
+              "id": 31603289,
+              "name": "Cupsy★Yummy Way",
+              "status": 0
+            },
+            {
+              "id": 32687071,
+              "name": "Amorphage Sloth",
+              "status": 0
+            },
+            {
+              "id": 33158448,
+              "name": "F.A. Dawn Dragster",
+              "status": 0
+            },
+            {
+              "id": 33198837,
+              "name": "Naturia Beast",
+              "status": 0
+            },
+            {
+              "id": 33918636,
+              "name": "Superheavy Samurai Scarecrow",
+              "status": 0
+            },
+            {
+              "id": 34086406,
+              "name": "Lavalval Chain",
+              "status": 0
+            },
+            {
+              "id": 34206604,
+              "name": "Magical Scientist",
+              "status": 0
+            },
+            {
+              "id": 34408491,
+              "name": "Beelze of the Diabolic Dragons",
+              "status": 0
+            },
+            {
+              "id": 34906152,
+              "name": "Mass Driver",
+              "status": 0
+            },
+            {
+              "id": 34945480,
+              "name": "Outer Entity Azathot",
+              "status": 0
+            },
+            {
+              "id": 34989413,
+              "name": "Reprodocus",
+              "status": 0
+            },
+            {
+              "id": 35059553,
+              "name": "Kaiser Colosseum",
+              "status": 0
+            },
+            {
+              "id": 35772782,
+              "name": "Number 67: Pair-a-Dice Smasher",
+              "status": 0
+            },
+            {
+              "id": 37818794,
+              "name": "Red-Eyes Dark Dragoon",
+              "status": 0
+            },
+            {
+              "id": 38273745,
+              "name": "Evilswarm Ouroboros",
+              "status": 0
+            },
+            {
+              "id": 39064822,
+              "name": "Knightmare Goblin",
+              "status": 0
+            },
+            {
+              "id": 41855169,
+              "name": "Jowgen the Spiritualist",
+              "status": 0
+            },
+            {
+              "id": 42009836,
+              "name": "Fossil Dyna Pachycephalo",
+              "status": 0
+            },
+            {
+              "id": 42703248,
+              "name": "Giant Trunade",
+              "status": 0
+            },
+            {
+              "id": 42829885,
+              "name": "The Forceful Sentry",
+              "status": 0
+            },
+            {
+              "id": 43262273,
+              "name": "Appointer of the Red Lotus",
+              "status": 0
+            },
+            {
+              "id": 43387895,
+              "name": "Supreme King Dragon Starving Venom",
+              "status": 0
+            },
+            {
+              "id": 44097050,
+              "name": "Mecha Phantom Beast Auroradon",
+              "status": 0
+            },
+            {
+              "id": 44763025,
+              "name": "Delinquent Duo",
+              "status": 0
+            },
+            {
+              "id": 44910027,
+              "name": "Victory Dragon",
+              "status": 0
+            },
+            {
+              "id": 46396218,
+              "name": "Azamina Ilia Silvia",
+              "status": 0
+            },
+            {
+              "id": 47960073,
+              "name": "K9-04 Noroi",
+              "status": 0
+            },
+            {
+              "id": 47961808,
+              "name": "Barrier Statue of the Inferno",
+              "status": 0
+            },
+            {
+              "id": 48626373,
+              "name": "Kashtira Arise-Heart",
+              "status": 0
+            },
+            {
+              "id": 50277355,
+              "name": "Cross-Sheep",
+              "status": 0
+            },
+            {
+              "id": 50588353,
+              "name": "Crystron Halqifibrax",
+              "status": 0
+            },
+            {
+              "id": 50954680,
+              "name": "Crystal Wing Synchro Dragon",
+              "status": 0
+            },
+            {
+              "id": 51858306,
+              "name": "Eclipse Wyvern",
+              "status": 0
+            },
+            {
+              "id": 52352005,
+              "name": "XX-Saber Gottoms",
+              "status": 0
+            },
+            {
+              "id": 52653092,
+              "name": "Number S0: Utopic ZEXAL",
+              "status": 0
+            },
+            {
+              "id": 52687916,
+              "name": "Trishula, Dragon of the Ice Barrier",
+              "status": 0
+            },
+            {
+              "id": 53334471,
+              "name": "Gozen Match",
+              "status": 0
+            },
+            {
+              "id": 54447022,
+              "name": "Soul Charge",
+              "status": 0
+            },
+            {
+              "id": 54719828,
+              "name": "Number 16: Shock Master",
+              "status": 0
+            },
+            {
+              "id": 55144522,
+              "name": "Pot of Greed",
+              "status": 0
+            },
+            {
+              "id": 55204071,
+              "name": "Gimmick Puppet Nightmare",
+              "status": 0
+            },
+            {
+              "id": 57421866,
+              "name": "Level Eater",
+              "status": 0
+            },
+            {
+              "id": 57585212,
+              "name": "Self-Destruct Button",
+              "status": 0
+            },
+            {
+              "id": 57953380,
+              "name": "Card of Safe Return",
+              "status": 0
+            },
+            {
+              "id": 58036229,
+              "name": "Protectcode Talker",
+              "status": 0
+            },
+            {
+              "id": 58820923,
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
+              "status": 0
+            },
+            {
+              "id": 58921041,
+              "name": "Anti-Spell Fragrance",
+              "status": 0
+            },
+            {
+              "id": 59509952,
+              "name": "Archlord Kristya",
+              "status": 0
+            },
+            {
+              "id": 59537380,
+              "name": "Guardragon Agarpain",
+              "status": 0
+            },
+            {
+              "id": 59581480,
+              "name": "Elfnote Tinia",
+              "status": 0
+            },
+            {
+              "id": 59859086,
+              "name": "Splash Mage",
+              "status": 0
+            },
+            {
+              "id": 59934749,
+              "name": "Isolde, Two Tales of the Noble Knights",
+              "status": 0
+            },
+            {
+              "id": 60682203,
+              "name": "Cold Wave",
+              "status": 0
+            },
+            {
+              "id": 61049315,
+              "name": "Naturia Rosewhip",
+              "status": 0
+            },
+            {
+              "id": 61740673,
+              "name": "Imperial Order",
+              "status": 0
+            },
+            {
+              "id": 62242678,
+              "name": "Hot Red Dragon Archfiend King Calamity",
+              "status": 0
+            },
+            {
+              "id": 62320425,
+              "name": "Agido the Ancient Sentinel",
+              "status": 0
+            },
+            {
+              "id": 63101919,
+              "name": "Tempest Magician",
+              "status": 0
+            },
+            {
+              "id": 63504681,
+              "name": "Number 86: Heroic Champion - Rhongomyniad",
+              "status": 0
+            },
+            {
+              "id": 63789924,
+              "name": "Smoke Grenade of the Thief",
+              "status": 0
+            },
+            {
+              "id": 64697231,
+              "name": "Trap Dustshoot",
+              "status": 0
+            },
+            {
+              "id": 65330383,
+              "name": "Knightmare Gryphon",
+              "status": 0
+            },
+            {
+              "id": 65681983,
+              "name": "Crossout Designator",
+              "status": 0
+            },
+            {
+              "id": 66011101,
+              "name": "Number 60: Dugares the Timeless",
+              "status": 0
+            },
+            {
+              "id": 68462976,
+              "name": "Secret Village of the Spellcasters",
+              "status": 0
+            },
+            {
+              "id": 69015963,
+              "name": "Cyber-Stein",
+              "status": 0
+            },
+            {
+              "id": 69072185,
+              "name": "Amorphage Goliath",
+              "status": 0
+            },
+            {
+              "id": 69243953,
+              "name": "Butterfly Dagger - Elma",
+              "status": 0
+            },
+            {
+              "id": 70369116,
+              "name": "Predaplant Verte Anaconda",
+              "status": 0
+            },
+            {
+              "id": 70636044,
+              "name": "Varudras, the Final Bringer of the End Times",
+              "status": 0
+            },
+            {
+              "id": 71818935,
+              "name": "Moon of the Closed Heaven",
+              "status": 0
+            },
+            {
+              "id": 72330894,
+              "name": "Simorgh, Bird of Sovereignty",
+              "status": 0
+            },
+            {
+              "id": 73356503,
+              "name": "Barrier Statue of the Stormwinds",
+              "status": 0
+            },
+            {
+              "id": 74191942,
+              "name": "Painful Choice",
+              "status": 0
+            },
+            {
+              "id": 74586817,
+              "name": "PSY-Framelord Omega",
+              "status": 0
+            },
+            {
+              "id": 74997493,
+              "name": "Saryuja Skull Dread",
+              "status": 0
+            },
+            {
+              "id": 75732622,
+              "name": "Grinder Golem",
+              "status": 0
+            },
+            {
+              "id": 76375976,
+              "name": "Mystic Mine",
+              "status": 0
+            },
+            {
+              "id": 78706415,
+              "name": "Fiber Jar",
+              "status": 0
+            },
+            {
+              "id": 79559912,
+              "name": "D/D/D Wave High King Caesar",
+              "status": 0
+            },
+            {
+              "id": 79571449,
+              "name": "Graceful Charity",
+              "status": 0
+            },
+            {
+              "id": 79606837,
+              "name": "Herald of the Arc Light",
+              "status": 0
+            },
+            {
+              "id": 80237445,
+              "name": "Artifact Mjollnir",
+              "status": 0
+            },
+            {
+              "id": 80604091,
+              "name": "Ultimate Offering",
+              "status": 0
+            },
+            {
+              "id": 83152482,
+              "name": "Union Carrier",
+              "status": 0
+            },
+            {
+              "id": 83326048,
+              "name": "Dimensional Barrier",
+              "status": 0
+            },
+            {
+              "id": 84636823,
+              "name": "Spell Canceller",
+              "status": 0
+            },
+            {
+              "id": 84815190,
+              "name": "Baronne de Fleur",
+              "status": 0
+            },
+            {
+              "id": 85115440,
+              "name": "Zoodiac Broadbull",
+              "status": 0
+            },
+            {
+              "id": 85243784,
+              "name": "Linkross",
+              "status": 0
+            },
+            {
+              "id": 85602018,
+              "name": "Last Will",
+              "status": 0
+            },
+            {
+              "id": 86148577,
+              "name": "Guardragon Elpy",
+              "status": 0
+            },
+            {
+              "id": 87639778,
+              "name": "Harpie's Feather Storm",
+              "status": 0
+            },
+            {
+              "id": 87746184,
+              "name": "Albion the Branded Dragon",
+              "status": 0
+            },
+            {
+              "id": 88071625,
+              "name": "The Tyrant Neptune",
+              "status": 0
+            },
+            {
+              "id": 88581108,
+              "name": "True King of All Calamities",
+              "status": 0
+            },
+            {
+              "id": 89023486,
+              "name": "Original Sinful Spoils - Snake-Eye",
+              "status": 0
+            },
+            {
+              "id": 90590303,
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
+              "status": 0
+            },
+            {
+              "id": 90846359,
+              "name": "Rivalry of Warlords",
+              "status": 0
+            },
+            {
+              "id": 90884403,
+              "name": "Phantasmal Lord Ultimitl Bishbaalkin",
+              "status": 0
+            },
+            {
+              "id": 91258852,
+              "name": "SPYRAL Master Plan",
+              "status": 0
+            },
+            {
+              "id": 91800273,
+              "name": "Dimension Shifter",
+              "status": 0
+            },
+            {
+              "id": 92731385,
+              "name": "Tearlaments Kitkallos",
+              "status": 0
+            },
+            {
+              "id": 93016201,
+              "name": "Royal Oppression",
+              "status": 0
+            },
+            {
+              "id": 93369354,
+              "name": "Fishborg Blaster",
+              "status": 0
+            },
+            {
+              "id": 94689206,
+              "name": "Block Dragon",
+              "status": 0
+            },
+            {
+              "id": 95454996,
+              "name": "Maliss Q White Binder",
+              "status": 0
+            },
+            {
+              "id": 95474755,
+              "name": "Number 89: Diablosis the Mind Hacker",
+              "status": 0
+            },
+            {
+              "id": 97631303,
+              "name": "Magicians' Souls",
+              "status": 0
+            },
+            {
+              "id": 98095162,
+              "name": "Curious, the Lightsworn Dominion",
+              "status": 0
+            },
+            {
+              "id": 572850,
+              "name": "Tearlaments Scheiren",
+              "status": 1
+            },
+            {
+              "id": 581014,
+              "name": "Daigusto Emeral",
+              "status": 1
+            },
+            {
+              "id": 1845204,
+              "name": "Instant Fusion",
+              "status": 1
+            },
+            {
+              "id": 2295440,
+              "name": "One for One",
+              "status": 1
+            },
+            {
+              "id": 3734202,
+              "name": "Naturia Sacred Tree",
+              "status": 1
+            },
+            {
+              "id": 6153210,
+              "name": "Ketu Dracotail",
+              "status": 1
+            },
+            {
+              "id": 6637331,
+              "name": "Bystial Druiswurm",
+              "status": 1
+            },
+            {
+              "id": 7375867,
+              "name": "Dracotail Mululu",
+              "status": 1
+            },
+            {
+              "id": 7394770,
+              "name": "Brilliant Fusion",
+              "status": 1
+            },
+            {
+              "id": 7902349,
+              "name": "Left Arm of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 8124921,
+              "name": "Right Leg of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 11110587,
+              "name": "That Grass Looks Greener",
+              "status": 1
+            },
+            {
+              "id": 13203964,
+              "name": "Perfectron Hydradrive Dragon",
+              "status": 1
+            },
+            {
+              "id": 15854426,
+              "name": "Divine Wind of Mist Valley",
+              "status": 1
+            },
+            {
+              "id": 18144506,
+              "name": "Harpie's Feather Duster",
+              "status": 1
+            },
+            {
+              "id": 20663556,
+              "name": "Substitoad",
+              "status": 1
+            },
+            {
+              "id": 24940422,
+              "name": "Sekka's Light",
+              "status": 1
+            },
+            {
+              "id": 25661743,
+              "name": "Prohibited Power Patron Portal - Terminus",
+              "status": 1
+            },
+            {
+              "id": 27970830,
+              "name": "Gateway of the Six",
+              "status": 1
+            },
+            {
+              "id": 28642461,
+              "name": "K9-66a Jokul",
+              "status": 1
+            },
+            {
+              "id": 29948294,
+              "name": "Branded in High Spirits",
+              "status": 1
+            },
+            {
+              "id": 30336082,
+              "name": "Sangen Summoning",
+              "status": 1
+            },
+            {
+              "id": 30581601,
+              "name": "Yummy★Snatchy",
+              "status": 1
+            },
+            {
+              "id": 31425736,
+              "name": "Cupsy☆Yummy",
+              "status": 1
+            },
+            {
+              "id": 32061192,
+              "name": "Maliss P Dormouse",
+              "status": 1
+            },
+            {
+              "id": 32548318,
+              "name": "Rahu Dracotail",
+              "status": 1
+            },
+            {
+              "id": 32723153,
+              "name": "Magical Explosion",
+              "status": 1
+            },
+            {
+              "id": 32807846,
+              "name": "Reinforcement of the Army",
+              "status": 1
+            },
+            {
+              "id": 33396948,
+              "name": "Exodia the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 33782437,
+              "name": "One Day of Peace",
+              "status": 1
+            },
+            {
+              "id": 33854624,
+              "name": "Bystial Magnamhut",
+              "status": 1
+            },
+            {
+              "id": 34022970,
+              "name": "Ext Ryzeal",
+              "status": 1
+            },
+            {
+              "id": 34909328,
+              "name": "Ryzeal Detonator",
+              "status": 1
+            },
+            {
+              "id": 36521307,
+              "name": "Mathmech Circular",
+              "status": 1
+            },
+            {
+              "id": 36637374,
+              "name": "Branded Opening",
+              "status": 1
+            },
+            {
+              "id": 37961969,
+              "name": "Tearlaments Havnis",
+              "status": 1
+            },
+            {
+              "id": 38572779,
+              "name": "Miscellaneousaurus",
+              "status": 1
+            },
+            {
+              "id": 38814750,
+              "name": "PSY-Framegear Gamma",
+              "status": 1
+            },
+            {
+              "id": 39512984,
+              "name": "Gem-Knight Master Diamond",
+              "status": 1
+            },
+            {
+              "id": 41420027,
+              "name": "Solemn Judgment",
+              "status": 1
+            },
+            {
+              "id": 41999284,
+              "name": "Linkuriboh",
+              "status": 1
+            },
+            {
+              "id": 43040603,
+              "name": "Monster Gate",
+              "status": 1
+            },
+            {
+              "id": 44362883,
+              "name": "Branded Fusion",
+              "status": 1
+            },
+            {
+              "id": 44519536,
+              "name": "Left Leg of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 46640168,
+              "name": "Fiendsmith's Lacrima",
+              "status": 1
+            },
+            {
+              "id": 52340444,
+              "name": "Sky Striker Mecha - Hornet Drones",
+              "status": 1
+            },
+            {
+              "id": 55623480,
+              "name": "Fairy Tail - Snow",
+              "status": 1
+            },
+            {
+              "id": 56910167,
+              "name": "Superdreadnought Rail Cannon Gustav Max",
+              "status": 1
+            },
+            {
+              "id": 58577036,
+              "name": "Reasoning",
+              "status": 1
+            },
+            {
+              "id": 59750328,
+              "name": "Card of Demise",
+              "status": 1
+            },
+            {
+              "id": 61665245,
+              "name": "Summon Sorceress",
+              "status": 1
+            },
+            {
+              "id": 63542003,
+              "name": "Keldo the Sacred Protector",
+              "status": 1
+            },
+            {
+              "id": 65563871,
+              "name": "Sunvine Healer",
+              "status": 1
+            },
+            {
+              "id": 66730191,
+              "name": "Sangen Kaimen",
+              "status": 1
+            },
+            {
+              "id": 66957584,
+              "name": "Infernity Launcher",
+              "status": 1
+            },
+            {
+              "id": 67115133,
+              "name": "Radiant Typhoon Chant",
+              "status": 1
+            },
+            {
+              "id": 67616300,
+              "name": "Chicken Game",
+              "status": 1
+            },
+            {
+              "id": 69170557,
+              "name": "Number C40: Gimmick Puppet of Dark Strings",
+              "status": 1
+            },
+            {
+              "id": 69272449,
+              "name": "Maliss P White Rabbit",
+              "status": 1
+            },
+            {
+              "id": 70903634,
+              "name": "Right Arm of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 71344451,
+              "name": "Slash Draw",
+              "status": 1
+            },
+            {
+              "id": 71650854,
+              "name": "Magical Mid-Breaker Field",
+              "status": 1
+            },
+            {
+              "id": 72537897,
+              "name": "Obedience Schooled",
+              "status": 1
+            },
+            {
+              "id": 72892473,
+              "name": "Card Destruction",
+              "status": 1
+            },
+            {
+              "id": 73468603,
+              "name": "Set Rotation",
+              "status": 1
+            },
+            {
+              "id": 73539069,
+              "name": "Striker Dragon",
+              "status": 1
+            },
+            {
+              "id": 73628505,
+              "name": "Terraforming",
+              "status": 1
+            },
+            {
+              "id": 74078255,
+              "name": "Tearlaments Merrli",
+              "status": 1
+            },
+            {
+              "id": 75433814,
+              "name": "Number 40: Gimmick Puppet of Strings",
+              "status": 1
+            },
+            {
+              "id": 75500286,
+              "name": "Gold Sarcophagus",
+              "status": 1
+            },
+            {
+              "id": 76794549,
+              "name": "Astrograph Sorcerer",
+              "status": 1
+            },
+            {
+              "id": 78872731,
+              "name": "Zoodiac Ratpier",
+              "status": 1
+            },
+            {
+              "id": 80181649,
+              "name": "\"A Case for K9\"",
+              "status": 1
+            },
+            {
+              "id": 80453041,
+              "name": "Phantom of Yubel",
+              "status": 1
+            },
+            {
+              "id": 81439173,
+              "name": "Foolish Burial",
+              "status": 1
+            },
+            {
+              "id": 82732705,
+              "name": "Skill Drain",
+              "status": 1
+            },
+            {
+              "id": 83764718,
+              "name": "Monster Reborn",
+              "status": 1
+            },
+            {
+              "id": 84211599,
+              "name": "Pot of Prosperity",
+              "status": 1
+            },
+            {
+              "id": 85106525,
+              "name": "Bonfire",
+              "status": 1
+            },
+            {
+              "id": 89997728,
+              "name": "Toon Table of Contents",
+              "status": 1
+            },
+            {
+              "id": 90953320,
+              "name": "T.G. Hyper Librarian",
+              "status": 1
+            },
+            {
+              "id": 91500017,
+              "name": "Toon Bookmark",
+              "status": 1
+            },
+            {
+              "id": 91623717,
+              "name": "Chain Strike",
+              "status": 1
+            },
+            {
+              "id": 91810826,
+              "name": "Tenpai Dragon Chundra",
+              "status": 1
+            },
+            {
+              "id": 93156774,
+              "name": "Vanquish Soul Hollie Sue",
+              "status": 1
+            },
+            {
+              "id": 93896655,
+              "name": "Sunavalon Dryas",
+              "status": 1
+            },
+            {
+              "id": 93946239,
+              "name": "Into the Void",
+              "status": 1
+            },
+            {
+              "id": 94145021,
+              "name": "Droll & Lock Bird",
+              "status": 1
+            },
+            {
+              "id": 95308449,
+              "name": "Final Countdown",
+              "status": 1
+            },
+            {
+              "id": 97462632,
+              "name": "Griffoh",
+              "status": 1
+            },
+            {
+              "id": 99243014,
+              "name": "Synchro Overtake",
+              "status": 1
+            },
+            {
+              "id": 99266988,
+              "name": "Chaos Space",
+              "status": 1
+            },
+            {
+              "id": 99937011,
+              "name": "Mudora the Sword Oracle",
+              "status": 1
+            },
+            {
+              "id": 8633261,
+              "name": "Ice Ryzeal",
+              "status": 2
+            },
+            {
+              "id": 21347668,
+              "name": "Purrely Sleepy Memory",
+              "status": 2
+            },
+            {
+              "id": 33760966,
+              "name": "Dracotail Arthalion",
+              "status": 2
+            },
+            {
+              "id": 35844557,
+              "name": "Sword Ryzeal",
+              "status": 2
+            },
+            {
+              "id": 63166095,
+              "name": "Sky Striker Mobilize - Engage!",
+              "status": 2
+            },
+            {
+              "id": 68337209,
+              "name": "Maliss in Underground",
+              "status": 2
+            },
+            {
+              "id": 75003700,
+              "name": "Dracotail Lukias",
+              "status": 2
+            }
+          ]
+        },
+        {
+          "id": "TCG-2026-10-18",
+          "date": "2026-10-18",
+          "label": "2026-10-18",
+          "confName": "TCG 18.10.2026",
+          "whitelist": false,
+          "source": "https://ygo.anihelp.co.uk/public/TCG/TCGCombiList.conf",
+          "cards": [
+            {
+              "id": 440556,
+              "name": "Bahamut Shark",
+              "status": 0
+            },
+            {
+              "id": 1041278,
+              "name": "Branded Expulsion",
+              "status": 0
+            },
+            {
+              "id": 1357146,
+              "name": "Ronintoadin",
+              "status": 0
+            },
+            {
+              "id": 3040496,
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
+              "status": 0
+            },
+            {
+              "id": 3280747,
+              "name": "Sixth Sense",
+              "status": 0
+            },
+            {
+              "id": 3679218,
+              "name": "Knightmare Mermaid",
+              "status": 0
+            },
+            {
+              "id": 3685372,
+              "name": "CXyz Gimmick Puppet Fanatix Machinix",
+              "status": 0
+            },
+            {
+              "id": 4280258,
+              "name": "Apollousa, Bow of the Goddess",
+              "status": 0
+            },
+            {
+              "id": 5851097,
+              "name": "Vanity's Emptiness",
+              "status": 0
+            },
+            {
+              "id": 6728559,
+              "name": "Archnemeses Protos",
+              "status": 0
+            },
+            {
+              "id": 8903700,
+              "name": "Djinn Releaser of Rituals",
+              "status": 0
+            },
+            {
+              "id": 9929398,
+              "name": "Blackwing - Gofu the Vague Shadow",
+              "status": 0
+            },
+            {
+              "id": 10389142,
+              "name": "Number 42: Galaxy Tomahawk",
+              "status": 0
+            },
+            {
+              "id": 10963799,
+              "name": "Barrier Statue of the Torrent",
+              "status": 0
+            },
+            {
+              "id": 11398059,
+              "name": "King of the Feral Imps",
+              "status": 0
+            },
+            {
+              "id": 15341821,
+              "name": "Dandylion",
+              "status": 0
+            },
+            {
+              "id": 16923472,
+              "name": "Wind-Up Hunter",
+              "status": 0
+            },
+            {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 0
+            },
+            {
+              "id": 17375316,
+              "name": "Confiscation",
+              "status": 0
+            },
+            {
+              "id": 19613556,
+              "name": "Heavy Storm",
+              "status": 0
+            },
+            {
+              "id": 19740112,
+              "name": "Barrier Statue of the Drought",
+              "status": 0
+            },
+            {
+              "id": 20292186,
+              "name": "Artifact Scythe",
+              "status": 0
+            },
+            {
+              "id": 21044178,
+              "name": "Abyss Dweller",
+              "status": 0
+            },
+            {
+              "id": 22593417,
+              "name": "Topologic Gumblar Dragon",
+              "status": 0
+            },
+            {
+              "id": 23002292,
+              "name": "Red Reboot",
+              "status": 0
+            },
+            {
+              "id": 23099524,
+              "name": "Pharaonic Advent",
+              "status": 0
+            },
+            {
+              "id": 23434538,
+              "name": "Maxx \"C\"",
+              "status": 0
+            },
+            {
+              "id": 23516703,
+              "name": "Summon Limit",
+              "status": 0
+            },
+            {
+              "id": 23557835,
+              "name": "Dimension Fusion",
+              "status": 0
+            },
+            {
+              "id": 23558733,
+              "name": "Phoenixian Cluster Amaryllis",
+              "status": 0
+            },
+            {
+              "id": 24094258,
+              "name": "Heavymetalfoes Electrumite",
+              "status": 0
+            },
+            {
+              "id": 24207889,
+              "name": "There Can Be Only One",
+              "status": 0
+            },
+            {
+              "id": 24224830,
+              "name": "Called by the Grave",
+              "status": 0
+            },
+            {
+              "id": 25725326,
+              "name": "Prank-Kids Meow-Meow-Mu",
+              "status": 0
+            },
+            {
+              "id": 25926710,
+              "name": "Kelbek the Ancient Vanguard",
+              "status": 0
+            },
+            {
+              "id": 27174286,
+              "name": "Return from the Different Dimension",
+              "status": 0
+            },
+            {
+              "id": 27381364,
+              "name": "Spright Elf",
+              "status": 0
+            },
+            {
+              "id": 27519978,
+              "name": "Charmer Quartet in Bloom",
+              "status": 0
+            },
+            {
+              "id": 27548199,
+              "name": "Borreload Savage Dragon",
+              "status": 0
+            },
+            {
+              "id": 27552504,
+              "name": "Beatrice, Lady of the Eternal",
+              "status": 0
+            },
+            {
+              "id": 28143384,
+              "name": "Aerial Eater",
+              "status": 0
+            },
+            {
+              "id": 28566710,
+              "name": "Last Turn",
+              "status": 0
+            },
+            {
+              "id": 30342076,
+              "name": "Link Decoder",
+              "status": 0
+            },
+            {
+              "id": 31603289,
+              "name": "Cupsy★Yummy Way",
+              "status": 0
+            },
+            {
+              "id": 32687071,
+              "name": "Amorphage Sloth",
+              "status": 0
+            },
+            {
+              "id": 33158448,
+              "name": "F.A. Dawn Dragster",
+              "status": 0
+            },
+            {
+              "id": 33198837,
+              "name": "Naturia Beast",
+              "status": 0
+            },
+            {
+              "id": 33918636,
+              "name": "Superheavy Samurai Scarecrow",
+              "status": 0
+            },
+            {
+              "id": 34086406,
+              "name": "Lavalval Chain",
+              "status": 0
+            },
+            {
+              "id": 34206604,
+              "name": "Magical Scientist",
+              "status": 0
+            },
+            {
+              "id": 34408491,
+              "name": "Beelze of the Diabolic Dragons",
+              "status": 0
+            },
+            {
+              "id": 34906152,
+              "name": "Mass Driver",
+              "status": 0
+            },
+            {
+              "id": 34945480,
+              "name": "Outer Entity Azathot",
+              "status": 0
+            },
+            {
+              "id": 34989413,
+              "name": "Reprodocus",
+              "status": 0
+            },
+            {
+              "id": 35059553,
+              "name": "Kaiser Colosseum",
+              "status": 0
+            },
+            {
+              "id": 35772782,
+              "name": "Number 67: Pair-a-Dice Smasher",
+              "status": 0
+            },
+            {
+              "id": 38273745,
+              "name": "Evilswarm Ouroboros",
+              "status": 0
+            },
+            {
+              "id": 39064822,
+              "name": "Knightmare Goblin",
+              "status": 0
+            },
+            {
+              "id": 41855169,
+              "name": "Jowgen the Spiritualist",
+              "status": 0
+            },
+            {
+              "id": 42009836,
+              "name": "Fossil Dyna Pachycephalo",
+              "status": 0
+            },
+            {
+              "id": 42703248,
+              "name": "Giant Trunade",
+              "status": 0
+            },
+            {
+              "id": 42829885,
+              "name": "The Forceful Sentry",
+              "status": 0
+            },
+            {
+              "id": 43262273,
+              "name": "Appointer of the Red Lotus",
+              "status": 0
+            },
+            {
+              "id": 43387895,
+              "name": "Supreme King Dragon Starving Venom",
+              "status": 0
+            },
+            {
+              "id": 44097050,
+              "name": "Mecha Phantom Beast Auroradon",
+              "status": 0
+            },
+            {
+              "id": 44763025,
+              "name": "Delinquent Duo",
+              "status": 0
+            },
+            {
+              "id": 44910027,
+              "name": "Victory Dragon",
+              "status": 0
+            },
+            {
+              "id": 47960073,
+              "name": "K9-04 Noroi",
+              "status": 0
+            },
+            {
+              "id": 47961808,
+              "name": "Barrier Statue of the Inferno",
+              "status": 0
+            },
+            {
+              "id": 48626373,
+              "name": "Kashtira Arise-Heart",
+              "status": 0
+            },
+            {
+              "id": 50277355,
+              "name": "Cross-Sheep",
+              "status": 0
+            },
+            {
+              "id": 50588353,
+              "name": "Crystron Halqifibrax",
+              "status": 0
+            },
+            {
+              "id": 50954680,
+              "name": "Crystal Wing Synchro Dragon",
+              "status": 0
+            },
+            {
+              "id": 51858306,
+              "name": "Eclipse Wyvern",
+              "status": 0
+            },
+            {
+              "id": 52352005,
+              "name": "XX-Saber Gottoms",
+              "status": 0
+            },
+            {
+              "id": 52653092,
+              "name": "Number S0: Utopic ZEXAL",
+              "status": 0
+            },
+            {
+              "id": 52687916,
+              "name": "Trishula, Dragon of the Ice Barrier",
+              "status": 0
+            },
+            {
+              "id": 53334471,
+              "name": "Gozen Match",
+              "status": 0
+            },
+            {
+              "id": 54447022,
+              "name": "Soul Charge",
+              "status": 0
+            },
+            {
+              "id": 54719828,
+              "name": "Number 16: Shock Master",
+              "status": 0
+            },
+            {
+              "id": 55144522,
+              "name": "Pot of Greed",
+              "status": 0
+            },
+            {
+              "id": 55204071,
+              "name": "Gimmick Puppet Nightmare",
+              "status": 0
+            },
+            {
+              "id": 57421866,
+              "name": "Level Eater",
+              "status": 0
+            },
+            {
+              "id": 57585212,
+              "name": "Self-Destruct Button",
+              "status": 0
+            },
+            {
+              "id": 57953380,
+              "name": "Card of Safe Return",
+              "status": 0
+            },
+            {
+              "id": 58036229,
+              "name": "Protectcode Talker",
+              "status": 0
+            },
+            {
+              "id": 58820923,
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
+              "status": 0
+            },
+            {
+              "id": 58921041,
+              "name": "Anti-Spell Fragrance",
+              "status": 0
+            },
+            {
+              "id": 59509952,
+              "name": "Archlord Kristya",
+              "status": 0
+            },
+            {
+              "id": 59537380,
+              "name": "Guardragon Agarpain",
+              "status": 0
+            },
+            {
+              "id": 59859086,
+              "name": "Splash Mage",
+              "status": 0
+            },
+            {
+              "id": 59934749,
+              "name": "Isolde, Two Tales of the Noble Knights",
+              "status": 0
+            },
+            {
+              "id": 60682203,
+              "name": "Cold Wave",
+              "status": 0
+            },
+            {
+              "id": 61049315,
+              "name": "Naturia Rosewhip",
+              "status": 0
+            },
+            {
+              "id": 61740673,
+              "name": "Imperial Order",
+              "status": 0
+            },
+            {
+              "id": 62242678,
+              "name": "Hot Red Dragon Archfiend King Calamity",
+              "status": 0
+            },
+            {
+              "id": 62320425,
+              "name": "Agido the Ancient Sentinel",
+              "status": 0
+            },
+            {
+              "id": 63101919,
+              "name": "Tempest Magician",
+              "status": 0
+            },
+            {
+              "id": 63504681,
+              "name": "Number 86: Heroic Champion - Rhongomyniad",
+              "status": 0
+            },
+            {
+              "id": 63789924,
+              "name": "Smoke Grenade of the Thief",
+              "status": 0
+            },
+            {
+              "id": 64697231,
+              "name": "Trap Dustshoot",
+              "status": 0
+            },
+            {
+              "id": 65330383,
+              "name": "Knightmare Gryphon",
+              "status": 0
+            },
+            {
+              "id": 66011101,
+              "name": "Number 60: Dugares the Timeless",
+              "status": 0
+            },
+            {
+              "id": 68462976,
+              "name": "Secret Village of the Spellcasters",
+              "status": 0
+            },
+            {
+              "id": 69015963,
+              "name": "Cyber-Stein",
+              "status": 0
+            },
+            {
+              "id": 69072185,
+              "name": "Amorphage Goliath",
+              "status": 0
+            },
+            {
+              "id": 69243953,
+              "name": "Butterfly Dagger - Elma",
+              "status": 0
+            },
+            {
+              "id": 70369116,
+              "name": "Predaplant Verte Anaconda",
+              "status": 0
+            },
+            {
+              "id": 71818935,
+              "name": "Moon of the Closed Heaven",
+              "status": 0
+            },
+            {
+              "id": 72330894,
+              "name": "Simorgh, Bird of Sovereignty",
+              "status": 0
+            },
+            {
+              "id": 73356503,
+              "name": "Barrier Statue of the Stormwinds",
+              "status": 0
+            },
+            {
+              "id": 74191942,
+              "name": "Painful Choice",
+              "status": 0
+            },
+            {
+              "id": 74586817,
+              "name": "PSY-Framelord Omega",
+              "status": 0
+            },
+            {
+              "id": 74997493,
+              "name": "Saryuja Skull Dread",
+              "status": 0
+            },
+            {
+              "id": 75732622,
+              "name": "Grinder Golem",
+              "status": 0
+            },
+            {
+              "id": 76375976,
+              "name": "Mystic Mine",
+              "status": 0
+            },
+            {
+              "id": 78706415,
+              "name": "Fiber Jar",
+              "status": 0
+            },
+            {
+              "id": 79559912,
+              "name": "D/D/D Wave High King Caesar",
+              "status": 0
+            },
+            {
+              "id": 79571449,
+              "name": "Graceful Charity",
+              "status": 0
+            },
+            {
+              "id": 79606837,
+              "name": "Herald of the Arc Light",
+              "status": 0
+            },
+            {
+              "id": 80237445,
+              "name": "Artifact Mjollnir",
+              "status": 0
+            },
+            {
+              "id": 80604091,
+              "name": "Ultimate Offering",
+              "status": 0
+            },
+            {
+              "id": 83152482,
+              "name": "Union Carrier",
+              "status": 0
+            },
+            {
+              "id": 83326048,
+              "name": "Dimensional Barrier",
+              "status": 0
+            },
+            {
+              "id": 84636823,
+              "name": "Spell Canceller",
+              "status": 0
+            },
+            {
+              "id": 84815190,
+              "name": "Baronne de Fleur",
+              "status": 0
+            },
+            {
+              "id": 85115440,
+              "name": "Zoodiac Broadbull",
+              "status": 0
+            },
+            {
+              "id": 85243784,
+              "name": "Linkross",
+              "status": 0
+            },
+            {
+              "id": 85602018,
+              "name": "Last Will",
+              "status": 0
+            },
+            {
+              "id": 86148577,
+              "name": "Guardragon Elpy",
+              "status": 0
+            },
+            {
+              "id": 87639778,
+              "name": "Harpie's Feather Storm",
+              "status": 0
+            },
+            {
+              "id": 87746184,
+              "name": "Albion the Branded Dragon",
+              "status": 0
+            },
+            {
+              "id": 88071625,
+              "name": "The Tyrant Neptune",
+              "status": 0
+            },
+            {
+              "id": 88581108,
+              "name": "True King of All Calamities",
+              "status": 0
+            },
+            {
+              "id": 89023486,
+              "name": "Original Sinful Spoils - Snake-Eye",
+              "status": 0
+            },
+            {
+              "id": 90590303,
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
+              "status": 0
+            },
+            {
+              "id": 90846359,
+              "name": "Rivalry of Warlords",
+              "status": 0
+            },
+            {
+              "id": 90884403,
+              "name": "Phantasmal Lord Ultimitl Bishbaalkin",
+              "status": 0
+            },
+            {
+              "id": 91258852,
+              "name": "SPYRAL Master Plan",
+              "status": 0
+            },
+            {
+              "id": 91800273,
+              "name": "Dimension Shifter",
+              "status": 0
+            },
+            {
+              "id": 92731385,
+              "name": "Tearlaments Kitkallos",
+              "status": 0
+            },
+            {
+              "id": 93016201,
+              "name": "Royal Oppression",
+              "status": 0
+            },
+            {
+              "id": 93369354,
+              "name": "Fishborg Blaster",
+              "status": 0
+            },
+            {
+              "id": 94689206,
+              "name": "Block Dragon",
+              "status": 0
+            },
+            {
+              "id": 95454996,
+              "name": "Maliss Q White Binder",
+              "status": 0
+            },
+            {
+              "id": 95474755,
+              "name": "Number 89: Diablosis the Mind Hacker",
+              "status": 0
+            },
+            {
+              "id": 97631303,
+              "name": "Magicians' Souls",
+              "status": 0
+            },
+            {
+              "id": 98095162,
+              "name": "Curious, the Lightsworn Dominion",
+              "status": 0
+            },
+            {
+              "id": 572850,
+              "name": "Tearlaments Scheiren",
+              "status": 1
+            },
+            {
+              "id": 581014,
+              "name": "Daigusto Emeral",
+              "status": 1
+            },
+            {
+              "id": 1845204,
+              "name": "Instant Fusion",
+              "status": 1
+            },
+            {
+              "id": 2295440,
+              "name": "One for One",
+              "status": 1
+            },
+            {
+              "id": 3734202,
+              "name": "Naturia Sacred Tree",
+              "status": 1
+            },
+            {
+              "id": 6153210,
+              "name": "Ketu Dracotail",
+              "status": 1
+            },
+            {
+              "id": 6637331,
+              "name": "Bystial Druiswurm",
+              "status": 1
+            },
+            {
+              "id": 7375867,
+              "name": "Dracotail Mululu",
+              "status": 1
+            },
+            {
+              "id": 7394770,
+              "name": "Brilliant Fusion",
+              "status": 1
+            },
+            {
+              "id": 7902349,
+              "name": "Left Arm of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 8124921,
+              "name": "Right Leg of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 11110587,
+              "name": "That Grass Looks Greener",
+              "status": 1
+            },
+            {
+              "id": 13203964,
+              "name": "Perfectron Hydradrive Dragon",
+              "status": 1
+            },
+            {
+              "id": 13332685,
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 1
+            },
+            {
+              "id": 15854426,
+              "name": "Divine Wind of Mist Valley",
+              "status": 1
+            },
+            {
+              "id": 18144506,
+              "name": "Harpie's Feather Duster",
+              "status": 1
+            },
+            {
+              "id": 20663556,
+              "name": "Substitoad",
+              "status": 1
+            },
+            {
+              "id": 24940422,
+              "name": "Sekka's Light",
+              "status": 1
+            },
+            {
+              "id": 25311006,
+              "name": "Triple Tactics Talent",
+              "status": 1
+            },
+            {
+              "id": 25661743,
+              "name": "Prohibited Power Patron Portal - Terminus",
+              "status": 1
+            },
+            {
+              "id": 27970830,
+              "name": "Gateway of the Six",
+              "status": 1
+            },
+            {
+              "id": 28642461,
+              "name": "K9-66a Jokul",
+              "status": 1
+            },
+            {
+              "id": 30336082,
+              "name": "Sangen Summoning",
+              "status": 1
+            },
+            {
+              "id": 30581601,
+              "name": "Yummy★Snatchy",
+              "status": 1
+            },
+            {
+              "id": 31425736,
+              "name": "Cupsy☆Yummy",
+              "status": 1
+            },
+            {
+              "id": 32061192,
+              "name": "Maliss P Dormouse",
+              "status": 1
+            },
+            {
+              "id": 32548318,
+              "name": "Rahu Dracotail",
+              "status": 1
+            },
+            {
+              "id": 32723153,
+              "name": "Magical Explosion",
+              "status": 1
+            },
+            {
+              "id": 32807846,
+              "name": "Reinforcement of the Army",
+              "status": 1
+            },
+            {
+              "id": 33396948,
+              "name": "Exodia the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 33782437,
+              "name": "One Day of Peace",
+              "status": 1
+            },
+            {
+              "id": 33854624,
+              "name": "Bystial Magnamhut",
+              "status": 1
+            },
+            {
+              "id": 34022970,
+              "name": "Ext Ryzeal",
+              "status": 1
+            },
+            {
+              "id": 34909328,
+              "name": "Ryzeal Detonator",
+              "status": 1
+            },
+            {
+              "id": 36521307,
+              "name": "Mathmech Circular",
+              "status": 1
+            },
+            {
+              "id": 36637374,
+              "name": "Branded Opening",
+              "status": 1
+            },
+            {
+              "id": 37961969,
+              "name": "Tearlaments Havnis",
+              "status": 1
+            },
+            {
+              "id": 38572779,
+              "name": "Miscellaneousaurus",
+              "status": 1
+            },
+            {
+              "id": 38814750,
+              "name": "PSY-Framegear Gamma",
+              "status": 1
+            },
+            {
+              "id": 39512984,
+              "name": "Gem-Knight Master Diamond",
+              "status": 1
+            },
+            {
+              "id": 41420027,
+              "name": "Solemn Judgment",
+              "status": 1
+            },
+            {
+              "id": 41999284,
+              "name": "Linkuriboh",
+              "status": 1
+            },
+            {
+              "id": 43040603,
+              "name": "Monster Gate",
+              "status": 1
+            },
+            {
+              "id": 44362883,
+              "name": "Branded Fusion",
+              "status": 1
+            },
+            {
+              "id": 44519536,
+              "name": "Left Leg of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 46640168,
+              "name": "Fiendsmith's Lacrima",
+              "status": 1
+            },
+            {
+              "id": 52340444,
+              "name": "Sky Striker Mecha - Hornet Drones",
+              "status": 1
+            },
+            {
+              "id": 55623480,
+              "name": "Fairy Tail - Snow",
+              "status": 1
+            },
+            {
+              "id": 56910167,
+              "name": "Superdreadnought Rail Cannon Gustav Max",
+              "status": 1
+            },
+            {
+              "id": 58577036,
+              "name": "Reasoning",
+              "status": 1
+            },
+            {
+              "id": 59581480,
+              "name": "Elfnote Tinia",
+              "status": 1
+            },
+            {
+              "id": 59750328,
+              "name": "Card of Demise",
+              "status": 1
+            },
+            {
+              "id": 61665245,
+              "name": "Summon Sorceress",
+              "status": 1
+            },
+            {
+              "id": 63542003,
+              "name": "Keldo the Sacred Protector",
+              "status": 1
+            },
+            {
+              "id": 65563871,
+              "name": "Sunvine Healer",
+              "status": 1
+            },
+            {
+              "id": 65681983,
+              "name": "Crossout Designator",
+              "status": 1
+            },
+            {
+              "id": 66730191,
+              "name": "Sangen Kaimen",
+              "status": 1
+            },
+            {
+              "id": 66957584,
+              "name": "Infernity Launcher",
+              "status": 1
+            },
+            {
+              "id": 67115133,
+              "name": "Radiant Typhoon Chant",
+              "status": 1
+            },
+            {
+              "id": 67616300,
+              "name": "Chicken Game",
+              "status": 1
+            },
+            {
+              "id": 69170557,
+              "name": "Number C40: Gimmick Puppet of Dark Strings",
+              "status": 1
+            },
+            {
+              "id": 69272449,
+              "name": "Maliss P White Rabbit",
+              "status": 1
+            },
+            {
+              "id": 70903634,
+              "name": "Right Arm of the Forbidden One",
+              "status": 1
+            },
+            {
+              "id": 71344451,
+              "name": "Slash Draw",
+              "status": 1
+            },
+            {
+              "id": 71650854,
+              "name": "Magical Mid-Breaker Field",
+              "status": 1
+            },
+            {
+              "id": 72537897,
+              "name": "Obedience Schooled",
+              "status": 1
+            },
+            {
+              "id": 72892473,
+              "name": "Card Destruction",
+              "status": 1
+            },
+            {
+              "id": 73468603,
+              "name": "Set Rotation",
+              "status": 1
+            },
+            {
+              "id": 73539069,
+              "name": "Striker Dragon",
+              "status": 1
+            },
+            {
+              "id": 73628505,
+              "name": "Terraforming",
+              "status": 1
+            },
+            {
+              "id": 74078255,
+              "name": "Tearlaments Merrli",
+              "status": 1
+            },
+            {
+              "id": 75433814,
+              "name": "Number 40: Gimmick Puppet of Strings",
+              "status": 1
+            },
+            {
+              "id": 75500286,
+              "name": "Gold Sarcophagus",
+              "status": 1
+            },
+            {
+              "id": 76794549,
+              "name": "Astrograph Sorcerer",
+              "status": 1
+            },
+            {
+              "id": 78872731,
+              "name": "Zoodiac Ratpier",
+              "status": 1
+            },
+            {
+              "id": 80181649,
+              "name": "\"A Case for K9\"",
+              "status": 1
+            },
+            {
+              "id": 80453041,
+              "name": "Phantom of Yubel",
+              "status": 1
+            },
+            {
+              "id": 81439173,
+              "name": "Foolish Burial",
+              "status": 1
+            },
+            {
+              "id": 82732705,
+              "name": "Skill Drain",
+              "status": 1
+            },
+            {
+              "id": 83764718,
+              "name": "Monster Reborn",
+              "status": 1
+            },
+            {
+              "id": 84211599,
+              "name": "Pot of Prosperity",
+              "status": 1
+            },
+            {
+              "id": 85106525,
+              "name": "Bonfire",
+              "status": 1
+            },
+            {
+              "id": 89997728,
+              "name": "Toon Table of Contents",
+              "status": 1
+            },
+            {
+              "id": 90953320,
+              "name": "T.G. Hyper Librarian",
+              "status": 1
+            },
+            {
+              "id": 91500017,
+              "name": "Toon Bookmark",
+              "status": 1
+            },
+            {
+              "id": 91623717,
+              "name": "Chain Strike",
+              "status": 1
+            },
+            {
+              "id": 91810826,
+              "name": "Tenpai Dragon Chundra",
+              "status": 1
+            },
+            {
+              "id": 93156774,
+              "name": "Vanquish Soul Hollie Sue",
+              "status": 1
+            },
+            {
+              "id": 93896655,
+              "name": "Sunavalon Dryas",
+              "status": 1
+            },
+            {
+              "id": 93946239,
+              "name": "Into the Void",
+              "status": 1
+            },
+            {
+              "id": 94145021,
+              "name": "Droll & Lock Bird",
+              "status": 1
+            },
+            {
+              "id": 95308449,
+              "name": "Final Countdown",
+              "status": 1
+            },
+            {
+              "id": 99243014,
+              "name": "Synchro Overtake",
+              "status": 1
+            },
+            {
+              "id": 99266988,
+              "name": "Chaos Space",
+              "status": 1
+            },
+            {
+              "id": 99937011,
+              "name": "Mudora the Sword Oracle",
+              "status": 1
+            },
+            {
+              "id": 8633261,
+              "name": "Ice Ryzeal",
+              "status": 2
+            },
+            {
+              "id": 21347668,
+              "name": "Purrely Sleepy Memory",
+              "status": 2
+            },
+            {
+              "id": 29948294,
+              "name": "Branded in High Spirits",
+              "status": 2
+            },
+            {
+              "id": 33760966,
+              "name": "Dracotail Arthalion",
+              "status": 2
+            },
+            {
+              "id": 35844557,
+              "name": "Sword Ryzeal",
+              "status": 2
+            },
+            {
+              "id": 68337209,
+              "name": "Maliss in Underground",
+              "status": 2
+            },
+            {
+              "id": 75003700,
+              "name": "Dracotail Lukias",
+              "status": 2
+            }
+          ]
+        },
         {
           "id": "TCG-2026-10-17",
           "date": "2026-10-17",
@@ -192,6 +2742,11 @@
               "status": 0
             },
             {
+              "id": 27519978,
+              "name": "Charmer Quartet in Bloom",
+              "status": 0
+            },
+            {
               "id": 27548199,
               "name": "Borreload Savage Dragon",
               "status": 0
@@ -234,6 +2789,11 @@
             {
               "id": 34206604,
               "name": "Magical Scientist",
+              "status": 0
+            },
+            {
+              "id": 34408491,
+              "name": "Beelze of the Diabolic Dragons",
               "status": 0
             },
             {
@@ -342,8 +2902,18 @@
               "status": 0
             },
             {
+              "id": 52352005,
+              "name": "XX-Saber Gottoms",
+              "status": 0
+            },
+            {
               "id": 52653092,
               "name": "Number S0: Utopic ZEXAL",
+              "status": 0
+            },
+            {
+              "id": 52687916,
+              "name": "Trishula, Dragon of the Ice Barrier",
               "status": 0
             },
             {
@@ -389,6 +2959,11 @@
             {
               "id": 58820923,
               "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
+              "status": 0
+            },
+            {
+              "id": 58921041,
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -462,6 +3037,11 @@
               "status": 0
             },
             {
+              "id": 68462976,
+              "name": "Secret Village of the Spellcasters",
+              "status": 0
+            },
+            {
               "id": 69015963,
               "name": "Cyber-Stein",
               "status": 0
@@ -519,6 +3099,11 @@
             {
               "id": 78706415,
               "name": "Fiber Jar",
+              "status": 0
+            },
+            {
+              "id": 79559912,
+              "name": "D/D/D Wave High King Caesar",
               "status": 0
             },
             {
@@ -837,6 +3422,11 @@
               "status": 1
             },
             {
+              "id": 36637374,
+              "name": "Branded Opening",
+              "status": 1
+            },
+            {
               "id": 37961969,
               "name": "Tearlaments Havnis",
               "status": 1
@@ -904,11 +3494,6 @@
             {
               "id": 58577036,
               "name": "Reasoning",
-              "status": 1
-            },
-            {
-              "id": 58921041,
-              "name": "Anti-Spell Fragrance",
               "status": 1
             },
             {
@@ -116118,6 +118703,11 @@
             {
               "id": 6637331,
               "name": "Bystial Druiswurm",
+              "status": 1
+            },
+            {
+              "id": 7293697,
+              "name": "Perfect Toon World",
               "status": 1
             },
             {
