@@ -89,7 +89,7 @@ for (const v of VERSIONS) {
   if (v.rebuild) {
     const prev = lists[0];
     const rows = v.rebuild.map(([name, points]) => ({ name, points }));
-    const r = resolvePoints(rows, cards, { fillFromApi: false });
+    const r = resolvePoints(rows, cards);
     const byId = new Map(prev.cards.map((c) => [c.id, c]));
     for (const c of r.cards) byId.set(c.id, c);
     built = { cards: [...byId.values()].sort((a, b) => a.id - b.id), unresolved: r.unresolved, rows: rows.length };
@@ -98,9 +98,9 @@ for (const v of VERSIONS) {
     const live = v.capture === 'live';
     source = live ? PAGE : captureUrl(v.capture);
     const rows = parseKonamiTable(await get(source, false));
-    // Today's list is built exactly as the daily fetcher builds it, so the
-    // next scheduled run sees no change.
-    const r = resolvePoints(rows, cards, { fillFromApi: live });
+    // Built exactly as the daily fetcher builds today's list, so the next
+    // scheduled run sees no change.
+    const r = resolvePoints(rows, cards);
     built = { cards: r.cards, unresolved: r.unresolved, rows: rows.length };
     if (!live) await sleep(1500);
   }

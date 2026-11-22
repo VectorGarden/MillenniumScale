@@ -60,6 +60,13 @@ export default function run() {
     eq(c.updated, [{ id: 'TCG-2026-01-01', date: '2026-01-01', entries: 2, changed: 1 }]);
   });
 
+  t('a correction that changes no status says it only touched names or order', () => {
+    const renamed = list('TCG', '2026-01-01', [{ id: 2, status: 1, name: 'Fixed Name' }, { id: 1, status: 0 }]);
+    const [c] = describeChanges(before, [fmt('TCG', [renamed]), md]);
+    eq(c.updated[0].changed, 0);
+    truthy(/Corrected \*\*2026-01-01\*\* — card names or order only, no status changes/.test(summaryMarkdown([c])), summaryMarkdown([c]));
+  });
+
   t('the summary says plainly when nothing moved', () => {
     truthy(/No changes upstream/.test(summaryMarkdown([])));
     const md2 = summaryMarkdown(describeChanges(before, [fmt('TCG', [newer, older]), md]));

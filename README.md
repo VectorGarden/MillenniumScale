@@ -35,7 +35,7 @@ node tools/fetch-banlists.mjs --cards              # also bundle card details, f
 
 Each format publishes a combined `*CombiList.conf` holding every list it has ever had, so the live mode is one request per format. Nothing is fetched at page load — the site never re-downloads the archive on its own.
 
-**Quirks the fetcher handles.** Section names are day-first European dates (`TCG 18.05.2026` → `2026-05-18`), and older OCG lists give only a month (`OCG 08.2000` → `2000-08-01`, or the exact advertised day when the index page has one). Occasionally the archive carries two sections for one date where the later is a correction — the more complete one wins, and it says so. Three sections upstream currently have no card entries at all (`MD 31.01.2026`, `MD 21.01.2026`, `OCG 21.12.2025`); those are skipped and reported rather than imported as empty lists that would call every deck legal.
+**Quirks the fetcher handles.** Section names are day-first European dates (`TCG 18.05.2026` → `2026-05-18`), and older OCG lists give only a month (`OCG 08.2000` → `2000-08-01`, or the exact advertised day when the index page has one; since November 2026 the OCG index lists none). Occasionally the archive carries two sections for one date where the later is a correction — the more complete one wins, and it says so. Three sections upstream currently have no card entries at all (`MD 31.01.2026`, `MD 21.01.2026`, `OCG 21.12.2025`); those are skipped and reported rather than imported as empty lists that would call every deck legal.
 
 ### Genesys points
 
@@ -49,7 +49,7 @@ node tools/fetch-genesys.mjs --date 2026-10-05  # date a new list by its announc
 Konami's page is the authority, but it lists names, not passcodes, and carries no effective date. So:
 
 - **Names are resolved against YGOPRODeck**, comparing letters and digits only (`Ω7` and `O7` match). The two spellings that differ outright live in `ALIASES` in `tools/lib/genesys.mjs`.
-- **YGOPRODeck's own `genesys_points` is the cross-check.** Where they disagree Konami's value is used, and the refresh PR lists every disagreement. A pointed card YGOPRODeck knows but no Konami row resolved to is kept at YGOPRODeck's value and reported, so a spelling change can't quietly make a 100-point card free.
+- **YGOPRODeck's own `genesys_points` is the cross-check, not a source.** Only Konami's rows make the list, and the refresh PR lists every disagreement. YGOPRODeck gives a new set's cards points as soon as they're announced, but Konami adds them at release, so those are reported as "YGOPRODeck only" and left off until Konami lists them. A Konami row that matches no card name is flagged in the PR, so a spelling change can't quietly make a 100-point card free.
 - **History accumulates.** Konami only publishes the current list, so each change from here on is added as a new dated list on top. It's dated the day the change was first seen (`dateSource: "detected"`) unless `--date` gives the announced day (`"announced"`). An unmerged refresh PR keeps its first-seen date rather than moving daily.
 - **A broken page isn't a new list.** Fewer than 100 rows, or a near-empty card database, is refused rather than written.
 

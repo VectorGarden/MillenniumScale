@@ -123,7 +123,13 @@ export function summaryMarkdown(changes, { title = 'Banlist archive', unit = 'st
         ? `- New list **${l.date}** — ${l.entries} entries, the first in the archive`
         : `- New list **${l.date}** — ${l.entries} entries, ${l.changed} ${unit} change${l.changed === 1 ? '' : 's'} from the previous list`);
     }
-    for (const l of c.updated) lines.push(`- Corrected **${l.date}** — ${l.changed} entr${l.changed === 1 ? 'y' : 'ies'} changed upstream`);
+    for (const l of c.updated) {
+      // Upstream also fixes card-name spelling and reorders entries; say so
+      // rather than calling it a correction of 0 entries.
+      lines.push(l.changed === 0
+        ? `- Corrected **${l.date}** — card names or order only, no ${unit} changes`
+        : `- Corrected **${l.date}** — ${l.changed} entr${l.changed === 1 ? 'y' : 'ies'} changed upstream`);
+    }
     for (const l of c.redated) lines.push(`- Re-dated **${l.from}** → **${l.to}** — same cards, exact day now known`);
     for (const l of c.removed) lines.push(`- ⚠️ Removed **${l.date}** — no longer upstream. Check this is real before merging.`);
     lines.push('');

@@ -49,18 +49,18 @@ export default function run() {
     card(60, 'Blue-Eyes White Dragon', 0)
   ];
 
-  t('Konami wins where it disagrees; YGOPRODeck fills what Konami lacks', () => {
+  t('Konami wins where it disagrees; YGOPRODeck-only cards are reported, not listed', () => {
     const r = resolvePoints(parseKonamiTable(PAGE), api);
     eq(r.cards, [
       { id: 10, name: 'A Case for K9', points: 15 },
       { id: 20, name: 'Ash Blossom & Joyous Spring', points: 25 },
       { id: 30, name: 'Exstellarknight Constellar Ptolemy Ω7', points: 5 },
-      { id: 40, name: 'Stellarnova Bonds', points: 3 },
-      { id: 50, name: 'Pot of Greed', points: 20 }
+      { id: 40, name: 'Stellarnova Bonds', points: 3 }
     ]);
     eq(r.mismatches, [{ id: 20, name: 'Ash Blossom & Joyous Spring', konami: 25, ygoprodeck: 0 }]);
     eq(r.unresolved, []);
     eq(r.apiOnly.map((a) => a.name), ['Pot of Greed']);
+    truthy(/Pot of Greed \(20\) has points on YGOPRODeck only, so it isn.t on the list/.test(crossCheckMarkdown(r)));
   });
 
   t('a name nothing matches is reported, not dropped silently', () => {
@@ -75,11 +75,11 @@ export default function run() {
       [{ name: 'K9-\u00d8\u00d8 Lupis', points: 5 }]);
   });
 
-  t('historical lists take no points from YGOPRODeck, and ignore unplaced 0-point rows', () => {
+  t('a list takes no points from YGOPRODeck, and ignores unplaced 0-point rows', () => {
     const rows = [{ name: '"A Case for K9"', points: 20 }, { name: 'Updated 6/23/2026', points: 0 }];
-    const r = resolvePoints(rows, api, { fillFromApi: false });
+    const r = resolvePoints(rows, api);
     eq(r.cards, [{ id: 10, name: 'A Case for K9', points: 20 }]);
-    eq([r.unresolved, r.apiOnly, r.mismatches], [[], [], []]);
+    eq(r.unresolved, []);
   });
 
   const a = [{ id: 1, name: 'x', points: 20 }];
@@ -126,7 +126,12 @@ export default function run() {
       }
     }
     eq(f.lists[f.lists.length - 1].date, '2025-09-22', 'history starts at launch: ');
-    for (const l of f.lists) if (!/^https:\/\/yugiohblog\.konami\.com\//.test(l.announcement || '')) throw new Error('no announcement for ' + l.id);
+    // Backfilled lists cite their post. A list the daily fetcher adds is dated
+    // by detection and has none until someone matches it to an announcement.
+    for (const l of f.lists) {
+      if (l.dateSource === 'detected') continue;
+      if (!/^https:\/\/yugiohblog\.konami\.com\//.test(l.announcement || '')) throw new Error('no announcement for ' + l.id);
+    }
     S.note(`${f.lists.length} list(s), ${f.lists[f.lists.length - 1].date} to ${f.lists[0].date}, newest with ${f.lists[0].cards.length} pointed cards`);
   });
 

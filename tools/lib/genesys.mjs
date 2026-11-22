@@ -3,10 +3,12 @@
  *
  * Konami's Genesys page is the authority: a table of card names and point
  * values. It has no passcodes, so names are resolved against YGOPRODeck,
- * which also carries `genesys_points` of its own. The two are cross-checked:
- * a value Konami lists wins, and a pointed card YGOPRODeck knows that no
- * Konami row resolved to is kept with YGOPRODeck's value and reported, so a
- * spelling difference can't silently make a 100-point card free.
+ * which also carries `genesys_points` of its own. The two are cross-checked,
+ * but only Konami's rows make the list: YGOPRODeck gives a new set's cards
+ * points as soon as they're announced, while Konami adds them at release.
+ * Every disagreement is reported in the refresh PR, and a Konami row that
+ * matches no card name is flagged there, so a spelling change can't quietly
+ * make a 100-point card free.
  *
  * Every function here is pure; tools/fetch-genesys.mjs does the I/O.
  */
@@ -58,12 +60,10 @@ export function parseKonamiTable(html) {
 /**
  * @param rows   [{name, points}] from Konami
  * @param cards  YGOPRODeck card records (cardinfo.php?misc=yes)
- * @param opts.fillFromApi  keep YGOPRODeck's value for pointed cards no row
- *        resolved to (default true). Off for historical lists: YGOPRODeck only
- *        knows today's points.
- * @returns {cards, mismatches, unresolved, apiOnly}
+ * @returns {cards, mismatches, unresolved, apiOnly}: `cards` comes from
+ *          Konami's rows alone; the rest are for the report
  */
-export function resolvePoints(rows, cards, { fillFromApi = true } = {}) {
+export function resolvePoints(rows, cards) {
   const byName = new Map();
   for (const c of cards) {
     const k = normName(c.name);
@@ -78,17 +78,13 @@ export function resolvePoints(rows, cards, { fillFromApi = true } = {}) {
     // An unplaced 0-point row costs nothing either way (Konami once put an
     // "Updated 6/23/2026" note in the table), so only pointed ones count.
     if (!card) { if (r.points > 0) unresolved.push(r); continue; }
-    if (fillFromApi && apiPoints(card) !== r.points) mismatches.push({ id: card.id, name: card.name, konami: r.points, ygoprodeck: apiPoints(card) });
+    if (apiPoints(card) !== r.points) mismatches.push({ id: card.id, name: card.name, konami: r.points, ygoprodeck: apiPoints(card) });
     out.set(card.id, { id: card.id, name: card.name, points: r.points });
   }
 
-  const apiOnly = [];
-  for (const c of fillFromApi ? cards : []) {
-    if (apiPoints(c) > 0 && !out.has(c.id)) {
-      apiOnly.push({ id: c.id, name: c.name, points: apiPoints(c) });
-      out.set(c.id, { id: c.id, name: c.name, points: apiPoints(c) });
-    }
-  }
+  const apiOnly = cards
+    .filter((c) => apiPoints(c) > 0 && !out.has(c.id))
+    .map((c) => ({ id: c.id, name: c.name, points: apiPoints(c) }));
 
   return {
     // Zero-point rows say nothing a missing row doesn't, so they're dropped.
@@ -126,10 +122,10 @@ export function crossCheckMarkdown({ mismatches, unresolved, apiOnly }) {
   if (!mismatches.length && !unresolved.length && !apiOnly.length) {
     return 'Konami and YGOPRODeck agree on every point value.\n';
   }
-  const lines = ['Konami and YGOPRODeck disagree — Konami’s value is used wherever its row could be placed:', ''];
+  const lines = ['Konami and YGOPRODeck disagree. The list follows Konami:', ''];
   for (const m of mismatches) lines.push(`- ${m.name}: Konami ${m.konami}, YGOPRODeck ${m.ygoprodeck}`);
   for (const u of unresolved) lines.push(`- “${u.name}” (${u.points}) on Konami’s list matches no card name; add it to ALIASES in tools/lib/genesys.mjs`);
-  for (const a of apiOnly) lines.push(`- ${a.name} (${a.points}) has points on YGOPRODeck only; kept at that value`);
+  for (const a of apiOnly) lines.push(`- ${a.name} (${a.points}) has points on YGOPRODeck only, so it isn\u2019t on the list until Konami adds it`);
   lines.push('');
   return lines.join('\n');
 }
