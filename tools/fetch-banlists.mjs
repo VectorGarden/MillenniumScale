@@ -159,7 +159,12 @@ async function buildFormat(key) {
     try {
       const html = await get(cfg.index);
       knownDates = scrapeDates(html, key);
-      console.log(`  index: ${knownDates.length} effective dates advertised`);
+      // The OCG index stopped listing dated pages in November 2026 and now
+      // links only the current month's file, so it often has none. That's
+      // fine: the dates only pin month-only sections to an exact day.
+      console.log(knownDates.length
+        ? `  index: ${knownDates.length} effective dates advertised`
+        : '  index: no exact dates listed; month-only sections fall back to the 1st');
     } catch (e) {
       console.log(`  index: unavailable (${e.message})`);
     }
