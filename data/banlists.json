@@ -1,6 +1,6 @@
 {
   "schema": "millennium-scale/banlists@1",
-  "generated": "2026-11-22T16:05:34.235Z",
+  "generated": "2026-11-27T17:33:22.454Z",
   "source": "https://ygo.anihelp.co.uk",
   "formats": [
     {
@@ -63365,7 +63365,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -63375,7 +63375,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -63390,12 +63390,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -63410,7 +63410,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -63420,7 +63420,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -63440,12 +63440,12 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
               "id": 19740112,
-              "name": "Barrier Statue Of The Drought",
+              "name": "Barrier Statue of the Drought",
               "status": 0
             },
             {
@@ -63485,22 +63485,22 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 0
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -63545,12 +63545,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -63560,12 +63560,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -63585,7 +63585,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -63600,7 +63600,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -63615,7 +63615,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -63630,22 +63630,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -63660,7 +63660,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -63685,7 +63685,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -63700,7 +63700,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -63710,17 +63710,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -63740,7 +63740,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -63765,7 +63765,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 0
             },
             {
@@ -63825,7 +63825,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -63855,12 +63855,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -63895,7 +63895,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -63915,7 +63915,7 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
@@ -63925,7 +63925,7 @@
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -63935,22 +63935,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -63964,8 +63964,18 @@
               "status": 1
             },
             {
+              "id": 16387555,
+              "name": "Kewl Tune Cue",
+              "status": 1
+            },
+            {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 1
+            },
+            {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -63985,7 +63995,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -63995,7 +64005,7 @@
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -64005,17 +64015,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -64025,17 +64035,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -64060,7 +64070,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -64080,7 +64090,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -64090,7 +64100,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -64105,7 +64115,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -64120,7 +64130,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -64135,12 +64145,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -64150,7 +64160,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -64180,12 +64190,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -64225,7 +64235,7 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
@@ -64250,17 +64260,17 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -64280,7 +64290,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -64290,12 +64300,17 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 2
+            },
+            {
+              "id": 16509007,
+              "name": "Kewl Tune Mix",
               "status": 2
             },
             {
@@ -64316,6 +64331,11 @@
             {
               "id": 29302858,
               "name": "Vanquish Soul Razen",
+              "status": 2
+            },
+            {
+              "id": 30271097,
+              "name": "The Fallen & The Virtuous",
               "status": 2
             },
             {
@@ -64360,7 +64380,12 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
+              "status": 2
+            },
+            {
+              "id": 78058681,
+              "name": "Kewl Tune Synchro",
               "status": 2
             },
             {
@@ -64369,13 +64394,13 @@
               "status": 2
             },
             {
-              "id": 94145021,
-              "name": "Droll & Lock Bird",
+              "id": 89392810,
+              "name": "Kewl Tune Reco",
               "status": 2
             },
             {
-              "id": 100248019,
-              "name": "The Fallen & The Virtuous",
+              "id": 94145021,
+              "name": "Droll & Lock Bird",
               "status": 2
             }
           ]
@@ -64395,7 +64420,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -64405,7 +64430,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -64420,12 +64445,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -64440,7 +64465,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -64450,7 +64475,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -64470,12 +64495,12 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
               "id": 19740112,
-              "name": "Barrier Statue Of The Drought",
+              "name": "Barrier Statue of the Drought",
               "status": 0
             },
             {
@@ -64515,22 +64540,22 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 0
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -64575,12 +64600,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -64590,12 +64615,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -64615,7 +64640,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -64630,7 +64655,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -64645,7 +64670,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -64660,22 +64685,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -64690,7 +64715,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -64715,7 +64740,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -64730,7 +64755,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -64740,17 +64765,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -64770,7 +64795,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -64850,7 +64875,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -64880,12 +64905,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -64915,7 +64940,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -64930,7 +64955,7 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
@@ -64940,7 +64965,7 @@
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -64950,22 +64975,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -64979,8 +65004,13 @@
               "status": 1
             },
             {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 1
+            },
+            {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -64995,7 +65025,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -65005,7 +65035,7 @@
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -65015,17 +65045,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -65035,17 +65065,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -65075,7 +65105,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -65095,7 +65125,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -65105,7 +65135,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -65120,7 +65150,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -65135,7 +65165,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -65150,12 +65180,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -65165,7 +65195,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -65180,7 +65210,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 1
             },
             {
@@ -65200,12 +65230,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -65245,7 +65275,7 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
@@ -65275,12 +65305,12 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
@@ -65290,7 +65320,7 @@
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -65310,7 +65340,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -65320,12 +65350,22 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 2
+            },
+            {
+              "id": 16387555,
+              "name": "Kewl Tune Cue",
+              "status": 2
+            },
+            {
+              "id": 16509007,
+              "name": "Kewl Tune Mix",
               "status": 2
             },
             {
@@ -65390,12 +65430,22 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
+              "status": 2
+            },
+            {
+              "id": 78058681,
+              "name": "Kewl Tune Synchro",
               "status": 2
             },
             {
               "id": 78872731,
               "name": "Zoodiac Ratpier",
+              "status": 2
+            },
+            {
+              "id": 89392810,
+              "name": "Kewl Tune Reco",
               "status": 2
             },
             {
@@ -65420,7 +65470,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -65430,7 +65480,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -65445,12 +65495,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -65465,7 +65515,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -65475,7 +65525,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -65495,12 +65545,12 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
               "id": 19740112,
-              "name": "Barrier Statue Of The Drought",
+              "name": "Barrier Statue of the Drought",
               "status": 0
             },
             {
@@ -65540,17 +65590,17 @@
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -65595,12 +65645,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -65610,12 +65660,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -65635,7 +65685,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -65650,7 +65700,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -65665,7 +65715,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -65680,22 +65730,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -65710,7 +65760,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -65735,7 +65785,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -65750,7 +65800,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -65760,17 +65810,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -65790,7 +65840,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -65870,7 +65920,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -65900,12 +65950,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -65935,7 +65985,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -65950,7 +66000,7 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
@@ -65960,7 +66010,7 @@
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -65970,22 +66020,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -65999,8 +66049,13 @@
               "status": 1
             },
             {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 1
+            },
+            {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -66015,7 +66070,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -66025,12 +66080,12 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 1
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -66040,17 +66095,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -66060,17 +66115,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -66100,7 +66155,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -66120,7 +66175,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -66130,7 +66185,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -66145,7 +66200,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -66160,7 +66215,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -66175,12 +66230,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -66190,7 +66245,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -66205,7 +66260,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 1
             },
             {
@@ -66225,12 +66280,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -66265,7 +66320,7 @@
             },
             {
               "id": 89023486,
-              "name": "Original Sinful Spoils - Snake-eye",
+              "name": "Original Sinful Spoils - Snake-Eye",
               "status": 1
             },
             {
@@ -66275,7 +66330,7 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
@@ -66305,12 +66360,12 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
@@ -66320,7 +66375,7 @@
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -66330,7 +66385,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -66340,12 +66395,22 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 2
+            },
+            {
+              "id": 16387555,
+              "name": "Kewl Tune Cue",
+              "status": 2
+            },
+            {
+              "id": 16509007,
+              "name": "Kewl Tune Mix",
               "status": 2
             },
             {
@@ -66380,7 +66445,7 @@
             },
             {
               "id": 30581601,
-              "name": "Yummy★snatchy",
+              "name": "Yummy★Snatchy",
               "status": 2
             },
             {
@@ -66415,12 +66480,22 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
+              "status": 2
+            },
+            {
+              "id": 78058681,
+              "name": "Kewl Tune Synchro",
               "status": 2
             },
             {
               "id": 78872731,
               "name": "Zoodiac Ratpier",
+              "status": 2
+            },
+            {
+              "id": 89392810,
+              "name": "Kewl Tune Reco",
               "status": 2
             },
             {
@@ -66445,7 +66520,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -66455,7 +66530,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -66470,12 +66545,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -66490,7 +66565,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -66500,7 +66575,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -66520,7 +66595,7 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
@@ -66560,17 +66635,17 @@
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -66615,12 +66690,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -66630,12 +66705,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -66650,7 +66725,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -66670,7 +66745,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -66685,7 +66760,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -66700,22 +66775,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -66730,7 +66805,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -66755,7 +66830,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -66770,7 +66845,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -66780,17 +66855,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -66810,7 +66885,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -66885,7 +66960,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -66910,12 +66985,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -66945,7 +67020,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -66960,7 +67035,7 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
@@ -66970,7 +67045,7 @@
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -66980,22 +67055,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -67009,8 +67084,13 @@
               "status": 1
             },
             {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 1
+            },
+            {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -67025,7 +67105,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -67035,12 +67115,12 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 1
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -67050,17 +67130,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -67070,17 +67150,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -67110,7 +67190,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -67130,7 +67210,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -67140,7 +67220,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -67155,7 +67235,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -67170,7 +67250,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -67185,12 +67265,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -67200,7 +67280,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -67215,7 +67295,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 1
             },
             {
@@ -67235,12 +67315,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -67275,7 +67355,7 @@
             },
             {
               "id": 89023486,
-              "name": "Original Sinful Spoils - Snake-eye",
+              "name": "Original Sinful Spoils - Snake-Eye",
               "status": 1
             },
             {
@@ -67285,7 +67365,7 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
@@ -67315,12 +67395,12 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
@@ -67330,7 +67410,7 @@
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -67340,7 +67420,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -67350,12 +67430,17 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 2
+            },
+            {
+              "id": 16509007,
+              "name": "Kewl Tune Mix",
               "status": 2
             },
             {
@@ -67385,7 +67470,7 @@
             },
             {
               "id": 30581601,
-              "name": "Yummy★snatchy",
+              "name": "Yummy★Snatchy",
               "status": 2
             },
             {
@@ -67420,7 +67505,12 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
+              "status": 2
+            },
+            {
+              "id": 89392810,
+              "name": "Kewl Tune Reco",
               "status": 2
             },
             {
@@ -67450,7 +67540,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -67460,7 +67550,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -67475,12 +67565,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -67495,7 +67585,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -67505,7 +67595,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -67525,7 +67615,7 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
@@ -67565,17 +67655,17 @@
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -67620,12 +67710,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -67635,12 +67725,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -67655,7 +67745,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -67675,7 +67765,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -67690,7 +67780,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -67705,22 +67795,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -67735,7 +67825,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -67760,7 +67850,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -67775,7 +67865,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -67785,17 +67875,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -67815,7 +67905,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -67890,7 +67980,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -67915,12 +68005,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -67950,7 +68040,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -67965,12 +68055,12 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -67980,22 +68070,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -68009,8 +68099,13 @@
               "status": 1
             },
             {
+              "id": 17209452,
+              "name": "Kewl Tune Rotary",
+              "status": 1
+            },
+            {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -68025,7 +68120,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -68035,12 +68130,12 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 1
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -68050,17 +68145,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -68070,17 +68165,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -68110,7 +68205,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -68130,7 +68225,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -68140,7 +68235,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -68155,7 +68250,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -68170,7 +68265,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -68185,12 +68280,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -68200,7 +68295,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -68215,7 +68310,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 1
             },
             {
@@ -68235,12 +68330,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -68275,7 +68370,7 @@
             },
             {
               "id": 89023486,
-              "name": "Original Sinful Spoils - Snake-eye",
+              "name": "Original Sinful Spoils - Snake-Eye",
               "status": 1
             },
             {
@@ -68285,12 +68380,12 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
               "id": 90953320,
-              "name": "T.g. Hyper Librarian",
+              "name": "T.G. Hyper Librarian",
               "status": 1
             },
             {
@@ -68320,12 +68415,12 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
@@ -68335,7 +68430,7 @@
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -68345,7 +68440,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -68355,12 +68450,17 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
+              "status": 2
+            },
+            {
+              "id": 16509007,
+              "name": "Kewl Tune Mix",
               "status": 2
             },
             {
@@ -68390,7 +68490,7 @@
             },
             {
               "id": 30581601,
-              "name": "Yummy★snatchy",
+              "name": "Yummy★Snatchy",
               "status": 2
             },
             {
@@ -68425,7 +68525,12 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
+              "status": 2
+            },
+            {
+              "id": 89392810,
+              "name": "Kewl Tune Reco",
               "status": 2
             },
             {
@@ -68455,7 +68560,7 @@
             },
             {
               "id": 3040496,
-              "name": "Chaos Ruler, The Chaotic Magical Dragon",
+              "name": "Chaos Ruler, the Chaotic Magical Dragon",
               "status": 0
             },
             {
@@ -68465,7 +68570,7 @@
             },
             {
               "id": 4280258,
-              "name": "Apollousa, Bow Of The Goddess",
+              "name": "Apollousa, Bow of the Goddess",
               "status": 0
             },
             {
@@ -68480,12 +68585,12 @@
             },
             {
               "id": 8903700,
-              "name": "Djinn Releaser Of Rituals",
+              "name": "Djinn Releaser of Rituals",
               "status": 0
             },
             {
               "id": 9929398,
-              "name": "Blackwing - Gofu The Vague Shadow",
+              "name": "Blackwing - Gofu the Vague Shadow",
               "status": 0
             },
             {
@@ -68500,7 +68605,7 @@
             },
             {
               "id": 14702066,
-              "name": "Cannon Soldier Mk-2",
+              "name": "Cannon Soldier MK-2",
               "status": 0
             },
             {
@@ -68510,7 +68615,7 @@
             },
             {
               "id": 16923472,
-              "name": "Wind-up Hunter",
+              "name": "Wind-Up Hunter",
               "status": 0
             },
             {
@@ -68530,7 +68635,7 @@
             },
             {
               "id": 19619755,
-              "name": "Performapal Five-rainbow Magician",
+              "name": "Performapal Five-Rainbow Magician",
               "status": 0
             },
             {
@@ -68570,17 +68675,17 @@
             },
             {
               "id": 25926710,
-              "name": "Kelbek The Ancient Vanguard",
+              "name": "Kelbek the Ancient Vanguard",
               "status": 0
             },
             {
               "id": 27174286,
-              "name": "Return From The Different Dimension",
+              "name": "Return from the Different Dimension",
               "status": 0
             },
             {
               "id": 27552504,
-              "name": "Beatrice, Lady Of The Eternal",
+              "name": "Beatrice, Lady of the Eternal",
               "status": 0
             },
             {
@@ -68625,12 +68730,12 @@
             },
             {
               "id": 35772782,
-              "name": "Number 67: Pair-a-dice Smasher",
+              "name": "Number 67: Pair-a-Dice Smasher",
               "status": 0
             },
             {
               "id": 35984222,
-              "name": "Ido The Supreme Magical Force",
+              "name": "Ido the Supreme Magical Force",
               "status": 0
             },
             {
@@ -68640,12 +68745,12 @@
             },
             {
               "id": 41482598,
-              "name": "Mirage Of Nightmare",
+              "name": "Mirage of Nightmare",
               "status": 0
             },
             {
               "id": 41855169,
-              "name": "Jowgen The Spiritualist",
+              "name": "Jowgen the Spiritualist",
               "status": 0
             },
             {
@@ -68660,7 +68765,7 @@
             },
             {
               "id": 43262273,
-              "name": "Appointer Of The Red Lotus",
+              "name": "Appointer of the Red Lotus",
               "status": 0
             },
             {
@@ -68680,7 +68785,7 @@
             },
             {
               "id": 52653092,
-              "name": "Number S0: Utopic Zexal",
+              "name": "Number S0: Utopic ZEXAL",
               "status": 0
             },
             {
@@ -68695,7 +68800,7 @@
             },
             {
               "id": 55144522,
-              "name": "Pot Of Greed",
+              "name": "Pot of Greed",
               "status": 0
             },
             {
@@ -68710,22 +68815,22 @@
             },
             {
               "id": 57585212,
-              "name": "Self-destruct Button",
+              "name": "Self-Destruct Button",
               "status": 0
             },
             {
               "id": 57953380,
-              "name": "Card Of Safe Return",
+              "name": "Card of Safe Return",
               "status": 0
             },
             {
               "id": 58820923,
-              "name": "Number 95: Galaxy-eyes Dark Matter Dragon",
+              "name": "Number 95: Galaxy-Eyes Dark Matter Dragon",
               "status": 0
             },
             {
               "id": 58921041,
-              "name": "Anti-spell Fragrance",
+              "name": "Anti-Spell Fragrance",
               "status": 0
             },
             {
@@ -68740,7 +68845,7 @@
             },
             {
               "id": 59750328,
-              "name": "Card Of Demise",
+              "name": "Card of Demise",
               "status": 0
             },
             {
@@ -68765,7 +68870,7 @@
             },
             {
               "id": 62320425,
-              "name": "Agido The Ancient Sentinel",
+              "name": "Agido the Ancient Sentinel",
               "status": 0
             },
             {
@@ -68780,7 +68885,7 @@
             },
             {
               "id": 63789924,
-              "name": "Smoke Grenade Of The Thief",
+              "name": "Smoke Grenade of the Thief",
               "status": 0
             },
             {
@@ -68790,17 +68895,17 @@
             },
             {
               "id": 68059897,
-              "name": "Maliss Red Ransom",
+              "name": "Maliss <Q> Red Ransom",
               "status": 0
             },
             {
               "id": 68462976,
-              "name": "Secret Village Of The Spellcasters",
+              "name": "Secret Village of the Spellcasters",
               "status": 0
             },
             {
               "id": 69015963,
-              "name": "Cyber-stein",
+              "name": "Cyber-Stein",
               "status": 0
             },
             {
@@ -68820,7 +68925,7 @@
             },
             {
               "id": 73356503,
-              "name": "Barrier Statue Of The Stormwinds",
+              "name": "Barrier Statue of the Stormwinds",
               "status": 0
             },
             {
@@ -68895,7 +69000,7 @@
             },
             {
               "id": 84211599,
-              "name": "Pot Of Prosperity",
+              "name": "Pot of Prosperity",
               "status": 0
             },
             {
@@ -68925,12 +69030,12 @@
             },
             {
               "id": 88581108,
-              "name": "True King Of All Calamities",
+              "name": "True King of All Calamities",
               "status": 0
             },
             {
               "id": 90590303,
-              "name": "Number 41: Bagooska The Terribly Tired Tapir",
+              "name": "Number 41: Bagooska the Terribly Tired Tapir",
               "status": 0
             },
             {
@@ -68960,7 +69065,7 @@
             },
             {
               "id": 95474755,
-              "name": "Number 89: Diablosis The Mind Hacker",
+              "name": "Number 89: Diablosis the Mind Hacker",
               "status": 0
             },
             {
@@ -68975,12 +69080,12 @@
             },
             {
               "id": 1475311,
-              "name": "Allure Of Darkness",
+              "name": "Allure of Darkness",
               "status": 1
             },
             {
               "id": 2295440,
-              "name": "One For One",
+              "name": "One for One",
               "status": 1
             },
             {
@@ -68990,22 +69095,22 @@
             },
             {
               "id": 6602300,
-              "name": "Blaze Fenix, The Burning Bombardment Bird",
+              "name": "Blaze Fenix, the Burning Bombardment Bird",
               "status": 1
             },
             {
               "id": 7902349,
-              "name": "Left Arm Of The Forbidden One",
+              "name": "Left Arm of the Forbidden One",
               "status": 1
             },
             {
               "id": 8124921,
-              "name": "Right Leg Of The Forbidden One",
+              "name": "Right Leg of the Forbidden One",
               "status": 1
             },
             {
               "id": 9674034,
-              "name": "Snake-eye Ash",
+              "name": "Snake-Eye Ash",
               "status": 1
             },
             {
@@ -69020,7 +69125,7 @@
             },
             {
               "id": 17266660,
-              "name": "Herald Of Orange Light",
+              "name": "Herald of Orange Light",
               "status": 1
             },
             {
@@ -69035,7 +69140,7 @@
             },
             {
               "id": 23434538,
-              "name": "Maxx \"c\"",
+              "name": "Maxx \"C\"",
               "status": 1
             },
             {
@@ -69045,12 +69150,12 @@
             },
             {
               "id": 24224830,
-              "name": "Called By The Grave",
+              "name": "Called by the Grave",
               "status": 1
             },
             {
               "id": 28126717,
-              "name": "Floowandereeze And The Magnificent Map",
+              "name": "Floowandereeze and the Magnificent Map",
               "status": 1
             },
             {
@@ -69060,17 +69165,17 @@
             },
             {
               "id": 31425736,
-              "name": "Cupsy☆yummy",
+              "name": "Cupsy☆Yummy",
               "status": 1
             },
             {
               "id": 32061192,
-              "name": "Maliss Dormouse",
+              "name": "Maliss <P> Dormouse",
               "status": 1
             },
             {
               "id": 32181268,
-              "name": "Amano-iwato",
+              "name": "Amano-Iwato",
               "status": 1
             },
             {
@@ -69080,17 +69185,17 @@
             },
             {
               "id": 32807846,
-              "name": "Reinforcement Of The Army",
+              "name": "Reinforcement of the Army",
               "status": 1
             },
             {
               "id": 33396948,
-              "name": "Exodia The Forbidden One",
+              "name": "Exodia the Forbidden One",
               "status": 1
             },
             {
               "id": 33782437,
-              "name": "One Day Of Peace",
+              "name": "One Day of Peace",
               "status": 1
             },
             {
@@ -69120,7 +69225,7 @@
             },
             {
               "id": 38814750,
-              "name": "Psy-framegear Gamma",
+              "name": "PSY-Framegear Gamma",
               "status": 1
             },
             {
@@ -69140,7 +69245,7 @@
             },
             {
               "id": 44519536,
-              "name": "Left Leg Of The Forbidden One",
+              "name": "Left Leg of the Forbidden One",
               "status": 1
             },
             {
@@ -69150,7 +69255,7 @@
             },
             {
               "id": 49238328,
-              "name": "Pot Of Extravagance",
+              "name": "Pot of Extravagance",
               "status": 1
             },
             {
@@ -69165,7 +69270,7 @@
             },
             {
               "id": 54562327,
-              "name": "Stake Your Soul!",
+              "name": "Stake your Soul!",
               "status": 1
             },
             {
@@ -69180,7 +69285,7 @@
             },
             {
               "id": 63542003,
-              "name": "Keldo The Sacred Protector",
+              "name": "Keldo the Sacred Protector",
               "status": 1
             },
             {
@@ -69195,12 +69300,12 @@
             },
             {
               "id": 68337209,
-              "name": "Maliss In Underground",
+              "name": "Maliss in Underground",
               "status": 1
             },
             {
               "id": 69272449,
-              "name": "Maliss White Rabbit",
+              "name": "Maliss <P> White Rabbit",
               "status": 1
             },
             {
@@ -69210,7 +69315,7 @@
             },
             {
               "id": 70903634,
-              "name": "Right Arm Of The Forbidden One",
+              "name": "Right Arm of the Forbidden One",
               "status": 1
             },
             {
@@ -69225,7 +69330,7 @@
             },
             {
               "id": 74586817,
-              "name": "Psy-framelord Omega",
+              "name": "PSY-Framelord Omega",
               "status": 1
             },
             {
@@ -69250,12 +69355,12 @@
             },
             {
               "id": 79606837,
-              "name": "Herald Of The Arc Light",
+              "name": "Herald of the Arc Light",
               "status": 1
             },
             {
               "id": 80845034,
-              "name": "Wanted: Seeker Of Sinful Spoils",
+              "name": "WANTED: Seeker of Sinful Spoils",
               "status": 1
             },
             {
@@ -69285,7 +69390,7 @@
             },
             {
               "id": 89023486,
-              "name": "Original Sinful Spoils - Snake-eye",
+              "name": "Original Sinful Spoils - Snake-Eye",
               "status": 1
             },
             {
@@ -69295,12 +69400,12 @@
             },
             {
               "id": 90846359,
-              "name": "Rivalry Of Warlords",
+              "name": "Rivalry of Warlords",
               "status": 1
             },
             {
               "id": 90953320,
-              "name": "T.g. Hyper Librarian",
+              "name": "T.G. Hyper Librarian",
               "status": 1
             },
             {
@@ -69330,12 +69435,12 @@
             },
             {
               "id": 96676583,
-              "name": "Maliss Chessy Cat",
+              "name": "Maliss <P> Chessy Cat",
               "status": 1
             },
             {
               "id": 98645731,
-              "name": "Pot Of Duality",
+              "name": "Pot of Duality",
               "status": 1
             },
             {
@@ -69345,7 +69450,7 @@
             },
             {
               "id": 99937011,
-              "name": "Mudora The Sword Oracle",
+              "name": "Mudora the Sword Oracle",
               "status": 1
             },
             {
@@ -69355,7 +69460,7 @@
             },
             {
               "id": 8628798,
-              "name": "D.d. Dynamite",
+              "name": "D.D. Dynamite",
               "status": 2
             },
             {
@@ -69365,12 +69470,12 @@
             },
             {
               "id": 10966439,
-              "name": "Marshmao☆yummy",
+              "name": "Marshmao☆Yummy",
               "status": 2
             },
             {
               "id": 13332685,
-              "name": "Ame No Habakiri No Mitsurugi",
+              "name": "Ame no Habakiri no Mitsurugi",
               "status": 2
             },
             {
@@ -69400,7 +69505,7 @@
             },
             {
               "id": 30581601,
-              "name": "Yummy★snatchy",
+              "name": "Yummy★Snatchy",
               "status": 2
             },
             {
@@ -69430,12 +69535,12 @@
             },
             {
               "id": 69299029,
-              "name": "Treasures Of The Kings",
+              "name": "Treasures of the Kings",
               "status": 2
             },
             {
               "id": 71278040,
-              "name": "Parallel Exceed",
+              "name": "Parallel eXceed",
               "status": 2
             },
             {

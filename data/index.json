@@ -5,7 +5,7 @@
       "file": "data/banlists.json",
       "kind": "banlist",
       "schema": "millennium-scale/banlists@1",
-      "generated": "2026-11-22T16:05:34.235Z",
+      "generated": "2026-11-27T17:33:22.454Z",
       "source": "https://ygo.anihelp.co.uk"
     },
     {
@@ -19,7 +19,7 @@
       "file": "data/genesys-ocg.json",
       "kind": "points",
       "schema": "millennium-scale/genesys@1",
-      "generated": "2026-10-17T17:07:59.876Z",
+      "generated": "2026-11-27T17:34:55.192Z",
       "source": "https://www.yugioh-card.com/japan/howto/genesys/"
     }
   ],
@@ -81,12 +81,12 @@
       "key": "GEN-OCG",
       "name": "Genesys (OCG)",
       "file": "data/genesys-ocg.json",
-      "lists": 3,
+      "lists": 4,
       "oldest": "2026-06-01",
       "current": {
-        "id": "GEN-OCG-2026-10-01",
-        "date": "2026-10-01",
-        "entries": 1091
+        "id": "GEN-OCG-2026-12-01",
+        "date": "2026-12-01",
+        "entries": 1107
       }
     }
   ]
